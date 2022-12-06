@@ -41,14 +41,14 @@
         </div>
     </div>
    
-    <div>
+    <!-- <div>
         <button (click)="hh()" >Test data</button>
-    </div>
+    </div> -->
 
     <div style="margin-top: 50px;">
         <mat-stepper  orientation="vertical">
 
-            <!-- <mat-step [stepControl]="forgetFormGroup">
+             <mat-step [stepControl]="forgetFormGroup">
                 <form [formGroup]="forgetFormGroup">
                     <ng-template matStepLabel>Accueil et Réception</ng-template>
 
@@ -266,7 +266,7 @@
                         <button mat-button matStepperNext class="suivant">Suivant</button>
                     </div>
                 </form>
-            </mat-step> -->
+            </mat-step> 
 
 
 
@@ -415,11 +415,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline" *ngFor="let case of ext.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="secondCtrl1">
+                                        <mat-radio-button *ngFor="let case of ext.case" value="{{case.numero}}" (change)="ch(i+1,ext.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -460,11 +458,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline" *ngFor="let case of ext.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="secondCtrl2">
+                                        <mat-radio-button *ngFor="let case of ext.case" value="{{case.numero}}" (change)="ch(i+1,ext.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -504,11 +500,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline" *ngFor="let case of ext.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="secondCtrl3">
+                                        <mat-radio-button *ngFor="let case of ext.case" value="{{case.numero}}" (change)="ch(i+1,ext.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -561,11 +555,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline" *ngFor="let case of san.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="thirdCtrl1">
+                                        <mat-radio-button *ngFor="let case of san.case" value="{{case.numero}}" (change)="ch(i+1,san.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -606,11 +598,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline" *ngFor="let case of san.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="thirdCtrl2">
+                                        <mat-radio-button *ngFor="let case of san.case" value="{{case.numero}}" (change)="ch(i+1,san.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -652,11 +642,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline" *ngFor="let case of san.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="thirdCtrl3">
+                                        <mat-radio-button *ngFor="let case of san.case" value="{{case.numero}}" (change)="ch(i+1,san.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -698,11 +686,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline" *ngFor="let case of san.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="thirdCtrl4">
+                                        <mat-radio-button *ngFor="let case of san.case" value="{{case.numero}}" (change)="ch(i+1,san.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -757,11 +743,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of cir.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="forCtrl1">
+                                        <mat-radio-button *ngFor="let case of cir.case" value="{{case.numero}}" (change)="ch(i+1,cir.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
 
                                 </td>
                             </tr>
@@ -803,11 +787,10 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of cir.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="forCtrl2">
+                                        <mat-radio-button *ngFor="let case of cir.case" value="{{case.numero}}" (change)="ch(i+1,cir.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
+
                                 </td>
                             </tr>
 
@@ -868,11 +851,10 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of ptit.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="fiveCtrl1">
+                                        <mat-radio-button *ngFor="let case of ptit.case" value="{{case.numero}}" (change)="ch(i+1,ptit.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
+
                                 </td>
                             </tr>
 
@@ -913,11 +895,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of ptit.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="fiveCtrl2">
+                                        <mat-radio-button *ngFor="let case of ptit.case" value="{{case.numero}}" (change)="ch(i+1,ptit.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -958,11 +938,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of ptit.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="fiveCtrl3">
+                                        <mat-radio-button *ngFor="let case of ptit.case" value="{{case.numero}}" (change)="ch(i+1,ptit.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1003,11 +981,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of ptit.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="fiveCtrl4">
+                                        <mat-radio-button *ngFor="let case of ptit.case" value="{{case.numero}}" (change)="ch(i+1,ptit.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
 
                                 </td>
                             </tr>
@@ -1060,11 +1036,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of rest.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="sixCtrl1">
+                                        <mat-radio-button *ngFor="let case of rest.case" value="{{case.numero}}" (change)="ch(i+1,rest.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1104,11 +1078,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of rest.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="sixCtrl2">
+                                        <mat-radio-button *ngFor="let case of rest.case" value="{{case.numero}}" (change)="ch(i+1,rest.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1149,11 +1121,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of rest.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="sixCtrl3">
+                                        <mat-radio-button *ngFor="let case of rest.case" value="{{case.numero}}" (change)="ch(i+1,rest.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1194,11 +1164,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of rest.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="sixCtrl4">
+                                        <mat-radio-button *ngFor="let case of rest.case" value="{{case.numero}}" (change)="ch(i+1,rest.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1255,11 +1223,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of br.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="sevenCtrl1">
+                                        <mat-radio-button *ngFor="let case of br.case" value="{{case.numero}}" (change)="ch(i+1,br.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1299,11 +1265,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of br.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="sevenCtrl2">
+                                        <mat-radio-button *ngFor="let case of br.case" value="{{case.numero}}" (change)="ch(i+1,br.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1344,11 +1308,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of br.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="sevenCtrl3">
+                                        <mat-radio-button *ngFor="let case of br.case" value="{{case.numero}}" (change)="ch(i+1,br.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1389,11 +1351,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of br.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="sevenCtrl4">
+                                        <mat-radio-button *ngFor="let case of br.case" value="{{case.numero}}" (change)="ch(i+1,br.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1446,11 +1406,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of sal.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="heigtCtrl1">
+                                        <mat-radio-button *ngFor="let case of sal.case" value="{{case.numero}}" (change)="ch(i+1,sal.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1490,11 +1448,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of sal.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="heigtCtrl2">
+                                        <mat-radio-button *ngFor="let case of sal.case" value="{{case.numero}}" (change)="ch(i+1,sal.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1545,11 +1501,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bien.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="nineCtrl1">
+                                        <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1589,11 +1543,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bien.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="nineCtrl2">
+                                        <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1633,11 +1585,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bien.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="nineCtrl3">
+                                        <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1677,11 +1627,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bien.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="nineCtrl4">
+                                        <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1722,11 +1670,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bien.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="nineCtrl5">
+                                        <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1766,11 +1712,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bien.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="nineCtrl6">
+                                        <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1811,11 +1755,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bien.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="nineCtrl7">
+                                        <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1856,11 +1798,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bien.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="nineCtrl8">
+                                        <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1901,11 +1841,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bien.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="nineCtrl9">
+                                        <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1945,11 +1883,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bien.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="nineCtrl10">
+                                        <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -1989,11 +1925,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bien.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="nineCtrl11">
+                                        <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2045,11 +1979,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of pis.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="tenCtrl1">
+                                        <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}" (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2089,11 +2021,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of pis.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="tenCtrl2">
+                                        <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}" (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2134,11 +2064,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of pis.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="tenCtrl3">
+                                        <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}" (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2180,11 +2108,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of pis.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="tenCtrl4">
+                                        <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}" (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2225,11 +2151,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of pis.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="tenCtrl5">
+                                        <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}" (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2270,11 +2194,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of pis.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="tenCtrl6">
+                                        <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}" (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2315,11 +2237,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of pis.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="tenCtrl7">
+                                        <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}" (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2359,11 +2279,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of pis.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="tenCtrl8">
+                                        <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}" (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2416,11 +2334,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bou.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="elevenCtrl1">
+                                        <mat-radio-button *ngFor="let case of bou.case" value="{{case.numero}}" (change)="ch(i+1,bou.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2472,11 +2388,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of unite.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="twelveCtrl1">
+                                        <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2516,11 +2430,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of unite.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="twelveCtrl2">
+                                        <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2561,11 +2473,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of unite.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="twelveCtrl3">
+                                        <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2607,11 +2517,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of unite.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="twelveCtrl4">
+                                        <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
 
                                 </td>
                             </tr>
@@ -2652,11 +2560,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of unite.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="twelveCtrl5">
+                                        <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2697,11 +2603,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of unite.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="twelveCtrl6">
+                                        <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2742,11 +2646,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of unite.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="twelveCtrl7">
+                                        <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2786,11 +2688,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of unite.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="twelveCtrl8">
+                                        <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2830,11 +2730,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of unite.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="twelveCtrl9">
+                                        <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2875,11 +2773,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of unite.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="twelveCtrl10">
+                                        <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2920,11 +2816,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of unite.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="twelveCtrl11">
+                                        <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -2965,11 +2859,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of unite.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="twelveCtrl12">
+                                        <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3010,11 +2902,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of unite.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="twelveCtrl13">
+                                        <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3054,11 +2944,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of unite.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="twelveCtrl14">
+                                        <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3100,11 +2988,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of unite.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="twelveCtrl15">
+                                        <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3144,11 +3030,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of unite.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="twelveCtrl16">
+                                        <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3189,11 +3073,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of unite.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="twelveCtrl17">
+                                        <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3248,11 +3130,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bain.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="thirteenCtrl1">
+                                        <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}" (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3292,11 +3172,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bain.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="thirteenCtrl2">
+                                        <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}" (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3337,11 +3215,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bain.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="thirteenCtrl3">
+                                        <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}" (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3383,11 +3259,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bain.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="thirteenCtrl4">
+                                        <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}" (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3428,11 +3302,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bain.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="thirteenCtrl5">
+                                        <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}" (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3473,11 +3345,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bain.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="thirteenCtrl6">
+                                        <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}" (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3518,11 +3388,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bain.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="thirteenCtrl7">
+                                        <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}" (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3562,11 +3430,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bain.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="thirteenCtrl8">
+                                        <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}" (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3607,11 +3473,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of bain.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="thirteenCtrl9">
+                                        <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}" (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3664,11 +3528,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of espace.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="forteenCtrl1">
+                                        <mat-radio-button *ngFor="let case of espace.case" value="{{case.numero}}" (change)="ch(i+1,espace.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3708,11 +3570,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of espace.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="forteenCtrl2">
+                                        <mat-radio-button *ngFor="let case of espace.case" value="{{case.numero}}" (change)="ch(i+1,espace.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3753,11 +3613,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of espace.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="forteenCtrl3">
+                                        <mat-radio-button *ngFor="let case of espace.case" value="{{case.numero}}" (change)="ch(i+1,espace.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3799,11 +3657,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of espace.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="forteenCtrl4">
+                                        <mat-radio-button *ngFor="let case of espace.case" value="{{case.numero}}" (change)="ch(i+1,espace.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3843,11 +3699,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of espace.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="forteenCtrl5">
+                                        <mat-radio-button *ngFor="let case of espace.case" value="{{case.numero}}" (change)="ch(i+1,espace.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3900,11 +3754,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of elect.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="fiveteenCtrl1">
+                                        <mat-radio-button *ngFor="let case of elect.case" value="{{case.numero}}" (change)="ch(i+1,elect.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3944,11 +3796,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of elect.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="fiveteenCtrl2">
+                                        <mat-radio-button *ngFor="let case of elect.case" value="{{case.numero}}" (change)="ch(i+1,elect.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -3989,11 +3839,9 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <div class="form-check form-check-inline " *ngFor="let case of elect.case">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio" value="option">
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div>
+                                    <mat-radio-group formControlName="fiveteenCtrl3">
+                                        <mat-radio-button *ngFor="let case of elect.case" value="{{case.numero}}" (change)="ch(i+1,elect.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
                                 </td>
                             </tr>
 
@@ -4015,19 +3863,19 @@
             <mat-step>
                 <ng-template matStepLabel>Done</ng-template>
 
-                <div class="row justify-content-around">
+                <div class="row justify-content-around mt-4">
                     <div class="col-4">
-                        <button type="button" class="btn btn-primary btn-lg">Large button</button>
+                        <button  mat-button class="back">Annuler</button>
                     </div>
                     <div class="col-4">
-                        <button type="button" class="btn btn-primary btn-lg">Large button</button>
+                        <button  mat-button style="background-color:#008663;">soumettre</button>
                     </div>
                 </div>
 
 
 
 
-                <div>
+                <div class="mt-4">
                     <button mat-button matStepperPrevious class="back">Back</button>
                     <button mat-button>Reset</button>
                 </div>

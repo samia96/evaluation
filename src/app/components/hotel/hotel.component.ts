@@ -84,6 +84,10 @@ export class HotelComponent implements OnInit {
 
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required],
+      secondCtrl1: ['', Validators.required],
+      secondCtrl2: ['', Validators.required],
+      secondCtrl3: ['', Validators.required],
+
     });
     this.forgetFormGroup = this._formBuilder.group({
       forgetCtrl: ['', Validators.required],
@@ -96,50 +100,138 @@ export class HotelComponent implements OnInit {
 
     this.thirdFormGroup = this._formBuilder.group({
       thirdCtrl: ['', Validators.required],
+      thirdCtrl1: ['', Validators.required],
+      thirdCtrl2: ['', Validators.required],
+      thirdCtrl3: ['', Validators.required],
+      thirdCtrl4: ['', Validators.required],
+
+
     });
 
     this.forFormGroup = this._formBuilder.group({
       forCtrl: ['', Validators.required],
+      forCtrl1: ['', Validators.required],
+      forCtrl2: ['', Validators.required],
+
     });
     this.fiveFormGroup = this._formBuilder.group({
-      forCtrl: ['', Validators.required],
+      fiveCtrl: ['', Validators.required],
+      fiveCtrl1: ['', Validators.required],
+      fiveCtrl2: ['', Validators.required],
+      fiveCtrl3: ['', Validators.required],
+      fiveCtrl4: ['', Validators.required],
     });
+
     this.sixFormGroup = this._formBuilder.group({
-      forCtrl: ['', Validators.required],
+      sixCtrl: ['', Validators.required],
+      sixCtrl1: ['', Validators.required],
+      sixCtrl2: ['', Validators.required],
+      sixCtrl3: ['', Validators.required],
+      sixCtrl4: ['', Validators.required],
     });
+
     this.sevenFormGroup = this._formBuilder.group({
-      forCtrl: ['', Validators.required],
+      sevenCtrl: ['', Validators.required],
+      sevenCtrl1: ['', Validators.required],
+      sevenCtrl2: ['', Validators.required],
+      sevenCtrl3: ['', Validators.required],
+      sevenCtrl4: ['', Validators.required],
     });
+
     this.heigtFormGroup = this._formBuilder.group({
-      forCtrl: ['', Validators.required],
+      heigtCtrl: ['', Validators.required],
+      heigtCtrl1: ['', Validators.required],
+      heigtCtrl2: ['', Validators.required],
+
     });
     this.nineFormGroup = this._formBuilder.group({
-      forCtrl: ['', Validators.required],
+      nineCtrl: ['', Validators.required],
+      nineCtrl1: ['', Validators.required],
+      nineCtrl2: ['', Validators.required],
+      nineCtrl3: ['', Validators.required],
+      nineCtrl4: ['', Validators.required],
+      nineCtrl5: ['', Validators.required],
+      nineCtrl6: ['', Validators.required],
+      nineCtrl7: ['', Validators.required],
+      nineCtrl8: ['', Validators.required],
+      nineCtrl9: ['', Validators.required],
+      nineCtrl10: ['', Validators.required],
+      nineCtrl11: ['', Validators.required],
+
     });
     this.tenFormGroup = this._formBuilder.group({
-      forCtrl: ['', Validators.required],
+      tenCtrl: ['', Validators.required],
+      tenCtrl1: ['', Validators.required],
+      tenCtrl2: ['', Validators.required],
+      tenCtrl3: ['', Validators.required],
+      tenCtrl4: ['', Validators.required],
+      tenCtrl5: ['', Validators.required],
+      tenCtrl6: ['', Validators.required],
+      tenCtrl7: ['', Validators.required],
+      tenCtrl8: ['', Validators.required],
+
     });
 
     this.elevenFormGroup = this._formBuilder.group({
-      forCtrl: ['', Validators.required],
+      elevenCtrl: ['', Validators.required],
+      elevenCtrl1: ['', Validators.required],
+
     });
 
     this.twelveFormGroup = this._formBuilder.group({
-      forCtrl: ['', Validators.required],
+      twelveCtrl: ['', Validators.required],
+      twelveCtrl1: ['', Validators.required],
+      twelveCtrl2: ['', Validators.required],
+      twelveCtrl3: ['', Validators.required],
+      twelveCtrl4: ['', Validators.required],
+      twelveCtrl5: ['', Validators.required],
+      twelveCtrl6: ['', Validators.required],
+      twelveCtrl7: ['', Validators.required],
+      twelveCtrl8: ['', Validators.required],
+      twelveCtrl9: ['', Validators.required],
+      twelveCtrl10: ['', Validators.required],
+      twelveCtrl11: ['', Validators.required],
+      twelveCtrl12: ['', Validators.required],
+      twelveCtrl13: ['', Validators.required],
+      twelveCtrl14: ['', Validators.required],
+      twelveCtrl15: ['', Validators.required],
+      twelveCtrl16: ['', Validators.required],
+      twelveCtrl17: ['', Validators.required],
+
     });
 
     this.thirteenFormGroup = this._formBuilder.group({
-      forCtrl: ['', Validators.required],
+      thirteenCtrl: ['', Validators.required],
+      thirteenCtrl1: ['', Validators.required],
+      thirteenCtrl2: ['', Validators.required],
+      thirteenCtrl3: ['', Validators.required],
+      thirteenCtrl4: ['', Validators.required],
+      thirteenCtrl5: ['', Validators.required],
+      thirteenCtrl6: ['', Validators.required],
+      thirteenCtrl7: ['', Validators.required],
+      thirteenCtrl8: ['', Validators.required],
+      thirteenCtrl9: ['', Validators.required],
+
     });
 
     this.forteenFormGroup = this._formBuilder.group({
-      forCtrl: ['', Validators.required],
+      forteenCtrl: ['', Validators.required],
+      forteenCtrl1: ['', Validators.required],
+      forteenCtrl2: ['', Validators.required],
+      forteenCtrl3: ['', Validators.required],
+      forteenCtrl4: ['', Validators.required],
+      forteenCtrl5: ['', Validators.required],
+
     });
     this.fiveteenFormGroup = this._formBuilder.group({
-      forCtrl: ['', Validators.required],
+      fiveteenCtrl: ['', Validators.required],
+      fiveteenCtrl1: ['', Validators.required],
+      fiveteenCtrl2: ['', Validators.required],
+      fiveteenCtrl3: ['', Validators.required],
+
     });
     this.sixteenFormGroup = this._formBuilder.group({
-      forCtrl: ['', Validators.required],
+      sixteenCtrl: ['', Validators.required],
     });
 
 

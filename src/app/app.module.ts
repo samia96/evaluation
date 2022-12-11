@@ -17,7 +17,16 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
 import { ReportingOneComponent } from './components/reporting-one/reporting-one.component';
+import { SearchPipe } from './components/reporting-one/search_pipe';
+import { ExportService } from './export.service';
+
+
+
+
+
+
 
 
 @NgModule({
@@ -25,6 +34,8 @@ import { ReportingOneComponent } from './components/reporting-one/reporting-one.
     AppComponent,
     HotelComponent,
     ReportingOneComponent,
+    SearchPipe,
+    
     
   
   ],
@@ -43,9 +54,12 @@ import { ReportingOneComponent } from './components/reporting-one/reporting-one.
     MatCheckboxModule,
     MatRadioModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule,
+    
+    
   ],
-  providers: [],
+  providers: [ExportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

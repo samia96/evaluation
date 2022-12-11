@@ -1,1 +1,208 @@
-<p>reporting-one works!</p>
+<div class="container">
+  <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 mt-4">
+    
+    
+    <ng-container matColumnDef="chapitre_et_rubrique">
+      <th mat-header-cell *matHeaderCellDef> Chapitre et Rubrique </th>
+      <td mat-cell *matCellDef="let element"> <b> {{element.chapitre}}</b> </td>
+      <td mat-cell *matCellDef="let element"> jj  </td>
+
+    </ng-container>
+   
+    <ng-container matColumnDef="pondere_majeur_5_étoiles">
+      <th mat-header-cell *matHeaderCellDef> % pondéré majeur 5*. </th>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+    </ng-container>
+
+    <ng-container matColumnDef="pondere_mineur_5_étoiles">
+      <th mat-header-cell *matHeaderCellDef> % pondéré mineur 5* </th>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+    </ng-container>
+
+    <ng-container matColumnDef="pondere_majeur_4_étoiles">
+      <th mat-header-cell *matHeaderCellDef> % pondéré majeur 4* </th>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+    </ng-container>
+
+  
+    <ng-container matColumnDef="pondere_mineur_4_étoiles">
+      <th mat-header-cell *matHeaderCellDef> % pondéré mineur 4* </th>
+      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+    </ng-container>
+
+    <ng-container matColumnDef="pondere_majeur_3_étoiles">
+      <th mat-header-cell *matHeaderCellDef> % pondéré majeur 3* </th>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+    </ng-container>
+
+    <ng-container matColumnDef="pondere_mineur_3_étoiles">
+      <th mat-header-cell *matHeaderCellDef> % pondéré mineur 3* </th>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+    </ng-container>
+
+    <ng-container matColumnDef="pondere_majeur_2_étoiles">
+      <th mat-header-cell *matHeaderCellDef> % pondéré majeur 2* </th>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+    </ng-container>
+
+    <ng-container matColumnDef="pondere_mineur_2_étoiles">
+      <th mat-header-cell *matHeaderCellDef> % pondéré mineur 2* </th>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+    </ng-container>
+
+    <ng-container matColumnDef="pondere_majeur_1_étoile">
+      <th mat-header-cell *matHeaderCellDef> % pondéré majeur 1* </th>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+    </ng-container>
+
+    <ng-container matColumnDef="pondere_mineur_1_étoile">
+      <th mat-header-cell *matHeaderCellDef> % pondéré mineur 3* </th>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+      <td mat-cell *matCellDef="let element"> 0% </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table> -->
+
+
+
+  <div class="row justify-content-around mt-4 head">
+    <div class="col-6 mt-4">
+      <nav class="navbar navbar-light">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" [ngModel]="chapitre" [ngModelOptions]="{standalone: true}" type="search" placeholder="Search" aria-label="Search">
+        </form>
+      </nav>
+    </div>
+    <div class="col-6 mt-4">
+      <div class="row">
+        <div class="col-5">
+          <button type="button" class="col-12 btn btn-success">Expoter en pdf</button>
+        </div>
+        <div class="col-5">
+          <button type="button" class="col-12 btn btn-success" value="export" (click)="tableToCSV()">Expoter en csv</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4 text-center">
+    <h2>Reporting globale</h2>
+  </div>
+  <table class="table mt-4">
+    <!-- <thead> -->
+      <tr>
+        <th scope="col">chapitre_et_rubrique</th>
+        <th scope="col">% pondéré majeur 5*</th>
+        <th scope="col">% pondéré mineur 5*</th>
+        <th scope="col">% pondéré majeur 4*</th>
+        <th scope="col">% pondéré mineur 4*</th>
+        <th scope="col">% pondéré majeur 3*</th>
+        <th scope="col">% pondéré mineur 3*</th>
+        <th scope="col">% pondéré majeur 2*</th>
+        <th scope="col">% pondéré mineur 2*</th>
+        <th scope="col">% pondéré majeur 1*</th>
+        <th scope="col">% pondéré mineur 1*</th>
+      </tr>
+    <!-- </thead> -->
+    
+      <tr *ngFor=" let hotel of  hotels | chapitreFilter:chapitre;let i = index">
+        <!-- <td>{{hotel.chapitre}} </td> -->
+        <!-- <td>0%</td>
+        <td>0%</td>
+        <td>0%</td>
+        <td>0%</td>
+        <td>0%</td>
+        <td>0%</td>
+        <td>0%</td>
+        <td>0%</td>
+        <td>0%</td>
+        <td>0%</td> -->
+
+        <td> <label style="color:#dd2251;">{{hotel.chapitre}}</label>
+
+           <tr *ngFor=" let rubriq of hotels[i].rubrique">
+            <td>{{rubriq.name}} </td>
+          </tr> 
+        </td>  
+     <td>0%
+        <tr *ngFor=" let rubriq of hotels[i].rubrique">
+          <td>0%</td>
+        </tr>
+      </td>
+
+      <td>0%
+        <tr *ngFor=" let rubriq of hotels[i].rubrique">
+          <td>0%</td>
+        </tr>
+      </td>
+
+      <td>0%
+        <tr *ngFor=" let rubriq of hotels[i].rubrique">
+          <td>0%</td>
+        </tr>
+      </td>
+
+      <td>0%
+        <tr *ngFor=" let rubriq of hotels[i].rubrique">
+          <td>0%</td>
+        </tr>
+      </td>
+
+      <td>0%
+        <tr *ngFor=" let rubriq of hotels[i].rubrique">
+          <td>0%</td>
+        </tr>
+      </td>
+
+      <td>0%
+        <tr *ngFor=" let rubriq of hotels[i].rubrique">
+          <td>0%</td>
+        </tr>
+      </td>
+
+      <td>0%
+        <tr *ngFor=" let rubriq of hotels[i].rubrique">
+          <td>0%</td>
+        </tr>
+      </td>
+
+      <td>0%
+        <tr *ngFor=" let rubriq of hotels[i].rubrique">
+          <td>0%</td>
+        </tr>
+      </td>
+
+      <td>0%
+        <tr *ngFor=" let rubriq of hotels[i].rubrique">
+          <td>0%</td>
+        </tr>
+      </td>
+
+      <td>0%
+        <tr *ngFor=" let rubriq of hotels[i].rubrique">
+          <td>0%</td>
+        </tr>
+      </td>
+      </tr>
+
+   
+  </table>
+<div class="mt-4">
+  <mat-card>
+    <mat-card-title> <h2 class="text-center"> Résultat de l'auto évaluation</h2> </mat-card-title>
+    <mat-card-content style="color:#dd2251;"> <h2 class="text-center">Defavorable</h2> </mat-card-content>
+  </mat-card>
+</div>
+
+</div>

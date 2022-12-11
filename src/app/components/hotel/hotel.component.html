@@ -1,12 +1,13 @@
+
 <div class="container">
     <div class="mt-4">
         <mat-card>
             <mat-card-header>
                 <mat-card-title>Evaluation</mat-card-title>
-
+    
             </mat-card-header>
             <mat-card-content>
-
+    
                 <div class="row">
                     <div class="col-4">
                         <label for=""> Type d'établissement</label>
@@ -27,10 +28,10 @@
                         </select>
                     </div>
                 </div>
-
+    
             </mat-card-content>
         </mat-card>
-
+    
     </div>
     <div class="row justify-content-between mt-4">
         <div class="col-4 text-center">
@@ -40,244 +41,24 @@
             <button mat-raised-button (click)="openDialog()" style="background-color:#dd2251 ;">Aide</button>
         </div>
     </div>
-   
+    
     <!-- <div>
         <button (click)="hh()" >Test data</button>
     </div> -->
-
+    
     <div style="margin-top: 50px;">
-        <mat-stepper  orientation="vertical">
+    
+    
+        <mat-stepper  orientation="vertical" linear  #stepper>
 
-             <mat-step [stepControl]="forgetFormGroup">
-                <form [formGroup]="forgetFormGroup">
-                    <ng-template matStepLabel>Accueil et Réception</ng-template>
-
-                    <div class="rubrique mt-4">
-                        <h2> Rubrique: Entrée </h2>
-                    </div>
-
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col" style="color:#dd2251 ;"> No</th>
-                                <th scope="col" style="color:#dd2251 ;"> Critères</th>
-                                <th scope="col" style="color: #dd2251;"> Notation</th>
-                            </tr>
-
-                        </thead>
-
-                        <tbody>
-                            <tr *ngFor=" let accueil of accueil_recep[0].critere;let i = index">
-
-                                <td class="col-sm-1"> {{i+1}}
-                                </td>
-                                <td class="col-sm-7"> {{accueil.name}}
-
-                                    <br><br>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="NC">
-                                        <label class="form-check-label" for="NC" style="color:#008663;">Non
-                                            applicable</label>
-                                    </div>
-
-                                </td>
-
-                                <td class="col-sm-4">
-                                    <mat-radio-group formControlName="forgetCtrl">
-                                        <mat-radio-button *ngFor="let case of accueil.case" value="{{case.numero}}" (change)="ch(i+1,accueil.name,$event)" required>{{case.numero}}</mat-radio-button>
-                                      </mat-radio-group>
-                                </td>
-                            </tr>
-
-
-
-                        </tbody>
-                    </table>
-
-                    <div class="rubrique mt-4">
-                        <h2> Rubrique: Hall d'accueil et salons </h2>
-                    </div>
-
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col" style="color:#dd2251 ;"> No</th>
-                                <th scope="col" style="color:#dd2251 ;"> Critères</th>
-                                <th scope="col" style="color: #dd2251;"> Notation</th>
-                            </tr>
-
-                        </thead>
-
-                        <tbody>
-                            <tr *ngFor=" let accueil of accueil_recep[1].critere;let i = index">
-
-                                <td class="col-sm-1"> {{i+10}}
-                                </td>
-                                <td class="col-sm-7"> {{accueil.name}}
-
-                                    <br><br>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="NC">
-                                        <label class="form-check-label" for="NC" style="color:#008663;">Non
-                                            applicable</label>
-                                    </div>
-
-                                </td>
-
-                                <td class="col-sm-4">
-                                    <mat-radio-group formControlName="forgetCtrl1">
-                                        <mat-radio-button *ngFor="let case of accueil.case" value="{{case.numero}}" (change)="ch(i+1,accueil.name,$event)" required>{{case.numero}}</mat-radio-button>
-                                      </mat-radio-group>
-                                </td>
-                            </tr>
-
-
-
-                        </tbody>
-                    </table>
-
-                    <div class="rubrique mt-4">
-                        <h2> Rubrique: Réception </h2>
-                    </div>
-
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col" style="color:#dd2251 ;"> No</th>
-                                <th scope="col" style="color:#dd2251 ;"> Critères</th>
-                                <th scope="col" style="color: #dd2251;"> Notation</th>
-                            </tr>
-
-                        </thead>
-
-                        <tbody>
-                            <tr *ngFor=" let accueil of accueil_recep[2].critere;let i = index">
-
-                                <td class="col-sm-1"> {{i+31}}
-                                </td>
-                                <td class="col-sm-7"> {{accueil.name}}
-
-                                    <br><br>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="NC">
-                                        <label class="form-check-label" for="NC" style="color:#008663;">Non
-                                            applicable</label>
-                                    </div>
-
-                                </td>
-
-                                <td class="col-sm-4">
-                                    <mat-radio-group formControlName="forgetCtrl2">
-                                        <mat-radio-button *ngFor="let case of accueil.case" value="{{case.numero}}" (change)="ch(i+1,accueil.name,$event)" required>{{case.numero}}</mat-radio-button>
-                                      </mat-radio-group>
-                                </td>
-                            </tr>
-
-
-
-                        </tbody>
-                    </table>
-
-                    <div class="rubrique mt-4">
-                        <h2> Rubrique: Conciergerie </h2>
-                    </div>
-
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col" style="color:#dd2251 ;"> No</th>
-                                <th scope="col" style="color:#dd2251 ;"> Critères</th>
-                                <th scope="col" style="color: #dd2251;"> Notation</th>
-                            </tr>
-
-                        </thead>
-
-                        <tbody>
-                            <tr *ngFor=" let accueil of accueil_recep[3].critere;let i = index">
-
-                                <td class="col-sm-1"> {{i+51}}
-                                </td>
-                                <td class="col-sm-7"> {{accueil.name}}
-
-                                    <br><br>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="NC">
-                                        <label class="form-check-label" for="NC" style="color:#008663;">Non
-                                            applicable</label>
-                                    </div>
-
-                                </td>
-
-                                <td class="col-sm-4">
-                                    <mat-radio-group formControlName="forgetCtrl3">
-                                        <mat-radio-button *ngFor="let case of accueil.case" value="{{case.numero}}" (change)="ch(i+1,accueil.name,$event)" required>{{case.numero}}</mat-radio-button>
-                                      </mat-radio-group>
-                                </td>
-                            </tr>
-
-
-
-                        </tbody>
-                    </table>
-                    <div class="rubrique mt-4">
-                        <h2> Rubrique: Bagagerie </h2>
-                    </div>
-
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col" style="color:#dd2251 ;"> No</th>
-                                <th scope="col" style="color:#dd2251 ;"> Critères</th>
-                                <th scope="col" style="color: #dd2251;"> Notation</th>
-                            </tr>
-
-                        </thead>
-
-                        <tbody>
-                            <tr *ngFor=" let accueil of accueil_recep[4].critere;let i = index">
-
-                                <td class="col-sm-1"> {{i+68}}
-                                </td>
-                                <td class="col-sm-7"> {{accueil.name}}
-
-                                    <br><br>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="NC">
-                                        <label class="form-check-label" for="NC" style="color:#008663;">Non
-                                            applicable</label>
-                                    </div>
-
-                                </td>
-
-                                <td class="col-sm-4">
-                                    <mat-radio-group formControlName="forgetCtrl4">
-                                        <mat-radio-button *ngFor="let case of accueil.case" value="{{case.numero}}" (change)="ch(i+1,accueil.name,$event)" required>{{case.numero}}</mat-radio-button>
-                                      </mat-radio-group>
-                                </td>
-                            </tr>
-
-
-
-                        </tbody>
-                    </table>
-
-                    <div>
-                        <button mat-button matStepperPrevious class="back">Back</button>
-                        <button mat-button matStepperNext class="suivant">Suivant</button>
-                    </div>
-                </form>
-            </mat-step> 
-
-
-
-            <mat-step [stepControl]="firstFormGroup" errorMessage="Non valide">
+            <mat-step [stepControl]="firstFormGroup" [optional]="isOptional" >
                 <form [formGroup]="firstFormGroup" >
                     <ng-template matStepLabel>Information et Réservation</ng-template>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Information </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -285,9 +66,9 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let info of info_reser[0].critere;let i = index">
                                 <!-- Numero ordre -->
@@ -312,7 +93,7 @@
                                                 <mat-radio-button *ngFor="let case of info.case" value="{{case.numero}}" (change)="ch(i+70,info.name,$event,'Information et Réservation','Information')" required>{{case.numero}}</mat-radio-button>
                                               </mat-radio-group>
                                         </div>
-
+    
                                     <!-- <div class="form-check form-check-inline " *ngFor="let case of info.case" id="text">
                                         <input class="form-check-input" type="radio" name="firstCtrl" id="inlineRadio"
                                             value="option" formControlName="firstCtrl" required>
@@ -322,7 +103,7 @@
                             </tr>
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Réservation </h2>
                     </div>
@@ -333,9 +114,9 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let info of info_reser[1].critere;let i = index">
                                 <!-- Numero ordre -->
@@ -365,29 +146,30 @@
                                     </div> -->
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div>
-
-                        <button mat-button matStepperNext class="suivant">Suivant</button>
-                    </div>
-
+                        <button mat-button matStepperPrevious class="back">Précédent</button>
+                        <button mat-button matStepperNext class= "suivant" >Suivant</button>
+                          <p style="color:red;">{{message}}</p>
+                         </div>
+    
                 </form>
             </mat-step>
-
-             <mat-step [stepControl]="secondFormGroup">
-                <form [formGroup]="secondFormGroup">
-                    <ng-template matStepLabel>Extérieur</ng-template>
-
+           
+            <mat-step [stepControl]="forgetFormGroup">
+                <form [formGroup]="forgetFormGroup">
+                    <ng-template matStepLabel>Accueil et Réception</ng-template>
+    
                     <div class="rubrique mt-4">
-                        <h2> Rubrique: Parking et dépose </h2>
+                        <h2> Rubrique: Entrée </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -395,42 +177,263 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
-                            <tr *ngFor=" let ext of exterieur[0].critere;let i = index">
-
-                                <td class="col-sm-1"> {{i+78}}
+                            <tr *ngFor=" let accueil of accueil_recep[0].critere;let i = index">
+    
+                                <td class="col-sm-1"> {{i+1}}
                                 </td>
-                                <td class="col-sm-7"> {{ext.name}}
-
+                                <td class="col-sm-7"> {{accueil.name}}
+    
+                                    <br><br>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="NC" required>
+                                        <label class="form-check-label" for="NC" style="color:#008663;">Non
+                                            applicable</label>
+                                    </div>
+    
+                                </td>
+    
+                                <td class="col-sm-4">
+                                    <mat-radio-group formControlName="forgetCtrl" required>
+                                        <mat-radio-button *ngFor="let case of accueil.case" value="{{case.numero}}" (change)="ch(i+1,accueil.name,$event)">{{case.numero}}</mat-radio-button>
+                                    </mat-radio-group>
+                                </td>
+                            </tr>
+    
+    
+    
+                        </tbody>
+                    </table>
+    
+                    <div class="rubrique mt-4">
+                        <h2> Rubrique: Hall d'accueil et salons </h2>
+                    </div>
+    
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="color:#dd2251 ;"> No</th>
+                                <th scope="col" style="color:#dd2251 ;"> Critères</th>
+                                <th scope="col" style="color: #dd2251;"> Notation</th>
+                            </tr>
+    
+                        </thead>
+    
+                        <tbody>
+                            <tr *ngFor=" let accueil of accueil_recep[1].critere;let i = index">
+    
+                                <td class="col-sm-1"> {{i+10}}
+                                </td>
+                                <td class="col-sm-7"> {{accueil.name}}
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
+                                <td class="col-sm-4">
+                                    <mat-radio-group formControlName="forgetCtrl1">
+                                        <mat-radio-button *ngFor="let case of accueil.case" value="{{case.numero}}" (change)="ch(i+1,accueil.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
+                                </td>
+                            </tr>
+    
+    
+    
+                        </tbody>
+                    </table>
+    
+                    <div class="rubrique mt-4">
+                        <h2> Rubrique: Réception </h2>
+                    </div>
+    
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="color:#dd2251 ;"> No</th>
+                                <th scope="col" style="color:#dd2251 ;"> Critères</th>
+                                <th scope="col" style="color: #dd2251;"> Notation</th>
+                            </tr>
+    
+                        </thead>
+    
+                        <tbody>
+                            <tr *ngFor=" let accueil of accueil_recep[2].critere;let i = index">
+    
+                                <td class="col-sm-1"> {{i+31}}
+                                </td>
+                                <td class="col-sm-7"> {{accueil.name}}
+    
+                                    <br><br>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="NC">
+                                        <label class="form-check-label" for="NC" style="color:#008663;">Non
+                                            applicable</label>
+                                    </div>
+    
+                                </td>
+    
+                                <td class="col-sm-4">
+                                    <mat-radio-group formControlName="forgetCtrl2">
+                                        <mat-radio-button *ngFor="let case of accueil.case" value="{{case.numero}}" (change)="ch(i+1,accueil.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
+                                </td>
+                            </tr>
+    
+    
+    
+                        </tbody>
+                    </table>
+    
+                    <div class="rubrique mt-4">
+                        <h2> Rubrique: Conciergerie </h2>
+                    </div>
+    
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="color:#dd2251 ;"> No</th>
+                                <th scope="col" style="color:#dd2251 ;"> Critères</th>
+                                <th scope="col" style="color: #dd2251;"> Notation</th>
+                            </tr>
+    
+                        </thead>
+    
+                        <tbody>
+                            <tr *ngFor=" let accueil of accueil_recep[3].critere;let i = index">
+    
+                                <td class="col-sm-1"> {{i+51}}
+                                </td>
+                                <td class="col-sm-7"> {{accueil.name}}
+    
+                                    <br><br>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="NC">
+                                        <label class="form-check-label" for="NC" style="color:#008663;">Non
+                                            applicable</label>
+                                    </div>
+    
+                                </td>
+    
+                                <td class="col-sm-4">
+                                    <mat-radio-group formControlName="forgetCtrl3">
+                                        <mat-radio-button *ngFor="let case of accueil.case" value="{{case.numero}}" (change)="ch(i+1,accueil.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
+                                </td>
+                            </tr>
+    
+    
+    
+                        </tbody>
+                    </table>
+                    <div class="rubrique mt-4">
+                        <h2> Rubrique: Bagagerie </h2>
+                    </div>
+    
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="color:#dd2251 ;"> No</th>
+                                <th scope="col" style="color:#dd2251 ;"> Critères</th>
+                                <th scope="col" style="color: #dd2251;"> Notation</th>
+                            </tr>
+    
+                        </thead>
+    
+                        <tbody>
+                            <tr *ngFor=" let accueil of accueil_recep[4].critere;let i = index">
+    
+                                <td class="col-sm-1"> {{i+68}}
+                                </td>
+                                <td class="col-sm-7"> {{accueil.name}}
+    
+                                    <br><br>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="NC">
+                                        <label class="form-check-label" for="NC" style="color:#008663;">Non
+                                            applicable</label>
+                                    </div>
+    
+                                </td>
+    
+                                <td class="col-sm-4">
+                                    <mat-radio-group formControlName="forgetCtrl4">
+                                        <mat-radio-button *ngFor="let case of accueil.case" value="{{case.numero}}" (change)="ch(i+1,accueil.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                      </mat-radio-group>
+                                </td>
+                            </tr>
+    
+    
+    
+                        </tbody>
+                    </table>
+    
+                    <div>
+                        <button mat-button matStepperPrevious class="back">Précédent</button>
+                        <button mat-button matStepperNext  class= "suivant">Suivant</button>
+                          <p style="color:red;">{{message}}</p>
+                    </div>
+                </form>
+            </mat-step> 
+    
+            <mat-step [stepControl]="secondFormGroup" [optional]="isOptional">
+                <form [formGroup]="secondFormGroup">
+                    <ng-template matStepLabel>Extérieur</ng-template>
+    
+                    <div class="rubrique mt-4">
+                        <h2> Rubrique: Parking et dépose </h2>
+                    </div>
+    
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="color:#dd2251 ;"> No</th>
+                                <th scope="col" style="color:#dd2251 ;"> Critères</th>
+                                <th scope="col" style="color: #dd2251;"> Notation</th>
+                            </tr>
+    
+                        </thead>
+    
+                        <tbody>
+                            <tr *ngFor=" let ext of exterieur[0].critere;let i = index">
+    
+                                <td class="col-sm-1"> {{i+78}}
+                                </td>
+                                <td class="col-sm-7"> {{ext.name}}
+    
+                                    <br><br>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="NC">
+                                        <label class="form-check-label" for="NC" style="color:#008663;">Non
+                                            applicable</label>
+                                    </div>
+    
+                                </td>
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="secondCtrl1">
                                         <mat-radio-button *ngFor="let case of ext.case" value="{{case.numero}}" (change)="ch(i+1,ext.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Espaces verts </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -438,41 +441,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let ext of exterieur[1].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+93}}
                                 </td>
                                 <td class="col-sm-7"> {{ext.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="secondCtrl2">
                                         <mat-radio-button *ngFor="let case of ext.case" value="{{case.numero}}" (change)="ch(i+1,ext.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Autres </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -480,54 +483,59 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let ext of exterieur[2].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+98}}
                                 </td>
                                 <td class="col-sm-7"> {{ext.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="secondCtrl3">
                                         <mat-radio-button *ngFor="let case of ext.case" value="{{case.numero}}" (change)="ch(i+1,ext.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div>
                         <button mat-button matStepperPrevious class="back">Back</button>
-                        <button mat-button matStepperNext class="suivant">Suivant</button>
+                        <button mat-button matStepperNext class= "suivant" >Suivant</button>
+                          <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
             </mat-step>
-
-
-            <mat-step [stepControl]="thirdFormGroup" errorMessage=" required.">
+    
+            
+    
+            
+    
+    
+            <mat-step [stepControl]="thirdFormGroup" errorMessage=" required." [optional]="isOptional">
                 <form [formGroup]="thirdFormGroup">
                     <ng-template matStepLabel>Sanitaire commun</ng-template>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Aspect général </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -535,42 +543,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let san of  sanitaire_commun[0].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+102}}
                                 </td>
                                 <td class="col-sm-7"> {{san.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="thirdCtrl1">
                                         <mat-radio-button *ngFor="let case of san.case" value="{{case.numero}}" (change)="ch(i+1,san.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Cabines de toilette </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -578,43 +586,43 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let san of  sanitaire_commun[1].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+111}}
                                 </td>
                                 <td class="col-sm-7"> {{san.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="thirdCtrl2">
                                         <mat-radio-button *ngFor="let case of san.case" value="{{case.numero}}" (change)="ch(i+1,san.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
-
+    
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Urinoirs </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -622,43 +630,43 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let san of  sanitaire_commun[2].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+126}}
                                 </td>
                                 <td class="col-sm-7"> {{san.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="thirdCtrl3">
                                         <mat-radio-button *ngFor="let case of san.case" value="{{case.numero}}" (change)="ch(i+1,san.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
-
+    
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Lavabo/vasque </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -666,56 +674,58 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let san of  sanitaire_commun[3].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+130}}
                                 </td>
                                 <td class="col-sm-7"> {{san.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="thirdCtrl4">
                                         <mat-radio-button *ngFor="let case of san.case" value="{{case.numero}}" (change)="ch(i+1,san.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div>
                         <button mat-button matStepperPrevious class="back">Back</button>
-                        <button mat-button matStepperNext class="suivant">Suivant</button>
+                        <button mat-button matStepperNext class= "suivant" >Suivant</button>
+                          <p style="color:red;">{{message}}</p>
+                        <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
             </mat-step>
-
-
-
-
-            <mat-step [stepControl]="forFormGroup" errorMessage=" required.">
+    
+    
+    
+    
+            <mat-step [stepControl]="forFormGroup" errorMessage=" required." [optional]="isOptional">
                 <form [formGroup]="forFormGroup">
                     <ng-template matStepLabel>Circulation</ng-template>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Couloirs </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -723,43 +733,43 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let cir of  circulation[0].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+145}}
                                 </td>
                                 <td class="col-sm-7"> {{cir.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="forCtrl1">
                                         <mat-radio-button *ngFor="let case of cir.case" value="{{case.numero}}" (change)="ch(i+1,cir.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
-
+    
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Ascenseurs </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -767,63 +777,65 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let cir of  circulation[1].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+154}}
                                 </td>
                                 <td class="col-sm-7"> {{cir.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="forCtrl2">
                                         <mat-radio-button *ngFor="let case of cir.case" value="{{case.numero}}" (change)="ch(i+1,cir.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
-
+    
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
+    
+    
                     <div>
                         <button mat-button matStepperPrevious class="back">Back</button>
-                        <button mat-button matStepperNext class="suivant">Suivant</button>
+                        <button mat-button matStepperNext class= "suivant" >Suivant</button>
+                          <p style="color:red;">{{message}}</p>
+                        <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
             </mat-step>
-
-
-
-
-            <mat-step [stepControl]="fiveFormGroup" errorMessage="required.">
+    
+    
+    
+    
+            <mat-step [stepControl]="fiveFormGroup" errorMessage="required." [optional]="isOptional">
                 <form [formGroup]="fiveFormGroup">
                     <ng-template matStepLabel>Petit Déjeuner</ng-template>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Généralités </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -831,43 +843,43 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let ptit of  petit_dejeuner[0].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+165}}
                                 </td>
                                 <td class="col-sm-7"> {{ptit.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="fiveCtrl1">
                                         <mat-radio-button *ngFor="let case of ptit.case" value="{{case.numero}}" (change)="ch(i+1,ptit.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
-
+    
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Menu </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -875,42 +887,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let ptit of  petit_dejeuner[1].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+176}}
                                 </td>
                                 <td class="col-sm-7"> {{ptit.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="fiveCtrl2">
                                         <mat-radio-button *ngFor="let case of ptit.case" value="{{case.numero}}" (change)="ch(i+1,ptit.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Equipement et mobilier </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -918,42 +930,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let ptit of  petit_dejeuner[2].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+185}}
                                 </td>
                                 <td class="col-sm-7"> {{ptit.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="fiveCtrl3">
                                         <mat-radio-button *ngFor="let case of ptit.case" value="{{case.numero}}" (change)="ch(i+1,ptit.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Personnel </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -961,54 +973,56 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let ptit of  petit_dejeuner[3].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+192}}
                                 </td>
                                 <td class="col-sm-7"> {{ptit.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="fiveCtrl4">
                                         <mat-radio-button *ngFor="let case of ptit.case" value="{{case.numero}}" (change)="ch(i+1,ptit.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
-
+    
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div>
                         <button mat-button matStepperPrevious class="back">Back</button>
-                        <button mat-button matStepperNext class="suivant">Suivant</button>
+                        <button mat-button matStepperNext class= "suivant" >Suivant</button>
+                          <p style="color:red;">{{message}}</p>
+                        <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
             </mat-step>
-
-
-            <mat-step [stepControl]="sixFormGroup" errorMessage="required.">
+    
+    
+            <mat-step [stepControl]="sixFormGroup" errorMessage="required." [optional]="isOptional">
                 <form [formGroup]="sixFormGroup">
                     <ng-template matStepLabel>Restaurant</ng-template>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Généralités </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1016,41 +1030,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let rest of  resto[0].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+198}}
                                 </td>
                                 <td class="col-sm-7"> {{rest.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="sixCtrl1">
                                         <mat-radio-button *ngFor="let case of rest.case" value="{{case.numero}}" (change)="ch(i+1,rest.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Equipement et mobilier </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1058,42 +1072,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let rest of  resto[1].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+212}}
                                 </td>
                                 <td class="col-sm-7"> {{rest.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="sixCtrl2">
                                         <mat-radio-button *ngFor="let case of rest.case" value="{{case.numero}}" (change)="ch(i+1,rest.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Menu </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1101,42 +1115,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let rest of  resto[2].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+219}}
                                 </td>
                                 <td class="col-sm-7"> {{rest.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="sixCtrl3">
                                         <mat-radio-button *ngFor="let case of rest.case" value="{{case.numero}}" (change)="ch(i+1,rest.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Personnel </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1144,58 +1158,60 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let rest of  resto[3].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+229}}
                                 </td>
                                 <td class="col-sm-7"> {{rest.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="sixCtrl4">
                                         <mat-radio-button *ngFor="let case of rest.case" value="{{case.numero}}" (change)="ch(i+1,rest.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
                     <div>
                         <button mat-button matStepperPrevious class="back">Back</button>
-                        <button mat-button matStepperNext class="suivant">Suivant</button>
+                        <button mat-button matStepperNext class= "suivant" >Suivant</button>
+                          <p style="color:red;">{{message}}</p>
+                        <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
             </mat-step>
-
-
-            <mat-step [stepControl]="sevenFormGroup" errorMessage="required.">
+    
+    
+            <mat-step [stepControl]="sevenFormGroup" errorMessage="required." [optional]="isOptional">
                 <form [formGroup]="sevenFormGroup">
                     <ng-template matStepLabel>Bar</ng-template>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Généralités </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1203,41 +1219,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let br of  bar[0].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+238}}
                                 </td>
                                 <td class="col-sm-7"> {{br.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="sevenCtrl1">
                                         <mat-radio-button *ngFor="let case of br.case" value="{{case.numero}}" (change)="ch(i+1,br.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Carte de boissons </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1245,42 +1261,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let br of  bar[1].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+243}}
                                 </td>
                                 <td class="col-sm-7"> {{br.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="sevenCtrl2">
                                         <mat-radio-button *ngFor="let case of br.case" value="{{case.numero}}" (change)="ch(i+1,br.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Equipement et mobilier </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1288,42 +1304,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let br of  bar[2].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+250}}
                                 </td>
                                 <td class="col-sm-7"> {{br.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="sevenCtrl3">
                                         <mat-radio-button *ngFor="let case of br.case" value="{{case.numero}}" (change)="ch(i+1,br.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Personnel </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1331,54 +1347,56 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let br of  bar[3].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+257}}
                                 </td>
                                 <td class="col-sm-7"> {{br.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="sevenCtrl4">
                                         <mat-radio-button *ngFor="let case of br.case" value="{{case.numero}}" (change)="ch(i+1,br.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
-
+    
+    
+    
                     <div>
                         <button mat-button matStepperPrevious class="back">Back</button>
-                        <button mat-button matStepperNext class="suivant">Suivant</button>
+                        <button mat-button matStepperNext class= "suivant" >Suivant</button>
+                          <p style="color:red;">{{message}}</p>
+                        <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
             </mat-step>
-
-            <mat-step [stepControl]="heigtFormGroup" errorMessage="required.">
+    
+            <mat-step [stepControl]="heigtFormGroup" errorMessage="required." [optional]="isOptional">
                 <form [formGroup]="heigtFormGroup">
                     <ng-template matStepLabel>Salle(s) de séminaires, de réunions et de cérémonies</ng-template>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Salle polyvalente </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1386,41 +1404,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let sal of  salle_semi_cere[0].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+263}}
                                 </td>
                                 <td class="col-sm-7"> {{sal.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="heigtCtrl1">
                                         <mat-radio-button *ngFor="let case of sal.case" value="{{case.numero}}" (change)="ch(i+1,sal.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Salles de réunion </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1428,52 +1446,54 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let sal of  salle_semi_cere[1].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+274}}
                                 </td>
                                 <td class="col-sm-7"> {{sal.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="heigtCtrl2">
                                         <mat-radio-button *ngFor="let case of sal.case" value="{{case.numero}}" (change)="ch(i+1,sal.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div>
                         <button mat-button matStepperPrevious class="back">Back</button>
-                        <button mat-button matStepperNext class="suivant">Suivant</button>
+                        <button mat-button matStepperNext class= "suivant" >Suivant</button>
+                          <p style="color:red;">{{message}}</p>
+                        <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
             </mat-step>
-
-            <mat-step [stepControl]="nineFormGroup" errorMessage="required.">
+    
+            <mat-step [stepControl]="nineFormGroup" errorMessage="required." [optional]="isOptional">
                 <form [formGroup]="nineFormGroup">
                     <ng-template matStepLabel>Bien-être et fitness</ng-template>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Accueil et information </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1481,41 +1501,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bien of  bien_etre_fitness[0].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+284}}
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="nineCtrl1">
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Massage </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1523,41 +1543,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bien of  bien_etre_fitness[1].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+296}}
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="nineCtrl2">
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Hammam </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1565,41 +1585,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bien of  bien_etre_fitness[2].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+303}}
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="nineCtrl3">
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Sauna </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1607,42 +1627,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bien of  bien_etre_fitness[3].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+310}}
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="nineCtrl4">
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Jacuzzi </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1650,41 +1670,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bien of  bien_etre_fitness[4].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+314}}
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="nineCtrl5">
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Salon de beauté </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1692,42 +1712,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bien of  bien_etre_fitness[5].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+317}}
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="nineCtrl6">
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Salle de fitness </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1735,42 +1755,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bien of  bien_etre_fitness[6].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+323}}
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="nineCtrl7">
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Vestiaires </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1778,42 +1798,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bien of  bien_etre_fitness[7].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+334}}
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="nineCtrl8">
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Douches </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1821,41 +1841,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bien of  bien_etre_fitness[8].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+342}}
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="nineCtrl9">
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Lavabo </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1863,41 +1883,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bien of  bien_etre_fitness[9].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+355}}
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="nineCtrl10">
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Cabines de toilette </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1905,53 +1925,55 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bien of  bien_etre_fitness[10].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+364}}
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="nineCtrl11">
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}" (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div>
                         <button mat-button matStepperPrevious class="back">Back</button>
-                        <button mat-button matStepperNext class="suivant">Suivant</button>
+                        <button mat-button matStepperNext class= "suivant" >Suivant</button>
+                          <p style="color:red;">{{message}}</p>
+                        <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
             </mat-step>
-
-            <mat-step [stepControl]="tenFormGroup" errorMessage="required.">
+    
+            <mat-step [stepControl]="tenFormGroup" errorMessage="required." [optional]="isOptional">
                 <form [formGroup]="tenFormGroup">
                     <ng-template matStepLabel>Piscine</ng-template>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Généralités </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -1959,41 +1981,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let pis of  piscine[0].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+374}}
                                 </td>
                                 <td class="col-sm-7"> {{pis.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="tenCtrl1">
                                         <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}" (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Sécurité de la piscine </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2001,42 +2023,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let pis of  piscine[1].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+382}}
                                 </td>
                                 <td class="col-sm-7"> {{pis.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="tenCtrl2">
                                         <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}" (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Mobilier de la piscine </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2044,43 +2066,43 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let pis of  piscine[2].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+388}}
                                 </td>
                                 <td class="col-sm-7"> {{pis.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="tenCtrl3">
                                         <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}" (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
-
+    
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Serviettes piscine </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2088,42 +2110,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let pis of  piscine[3].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+393}}
                                 </td>
                                 <td class="col-sm-7"> {{pis.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="tenCtrl4">
                                         <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}" (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Snack-bar </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2131,42 +2153,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let pis of  piscine[4].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+397}}
                                 </td>
                                 <td class="col-sm-7"> {{pis.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="tenCtrl5">
                                         <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}" (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Vestiaires </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2174,42 +2196,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let pis of  piscine[5].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+400}}
                                 </td>
                                 <td class="col-sm-7"> {{pis.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="tenCtrl6">
                                         <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}" (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Lavabo </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2217,41 +2239,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let pis of  piscine[6].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+412}}
                                 </td>
                                 <td class="col-sm-7"> {{pis.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="tenCtrl7">
                                         <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}" (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Cabines de toilette </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2259,54 +2281,56 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let pis of  piscine[7].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+419}}
                                 </td>
                                 <td class="col-sm-7"> {{pis.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="tenCtrl8">
                                         <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}" (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div>
                         <button mat-button matStepperPrevious class="back">Back</button>
-                        <button mat-button matStepperNext class="suivant">Suivant</button>
+                        <button mat-button matStepperNext class= "suivant" >Suivant</button>
+                          <p style="color:red;">{{message}}</p>
+                        <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
             </mat-step>
-
-
-            <mat-step [stepControl]="elevenFormGroup" errorMessage="required.">
+    
+    
+            <mat-step [stepControl]="elevenFormGroup" errorMessage="required." [optional]="isOptional">
                 <form [formGroup]="elevenFormGroup">
                     <ng-template matStepLabel>Boutique</ng-template>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Boutique </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2314,53 +2338,55 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bou of boutique[0].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+428}}
                                 </td>
                                 <td class="col-sm-7"> {{bou.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="elevenCtrl1">
                                         <mat-radio-button *ngFor="let case of bou.case" value="{{case.numero}}" (change)="ch(i+1,bou.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div>
                         <button mat-button matStepperPrevious class="back">Back</button>
-                        <button mat-button matStepperNext class="suivant">Suivant</button>
+                        <button mat-button matStepperNext class= "suivant" >Suivant</button>
+                          <p style="color:red;">{{message}}</p>
+                        <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
             </mat-step>
-
-            <mat-step [stepControl]="twelveFormGroup" errorMessage="required.">
+    
+            <mat-step [stepControl]="twelveFormGroup" errorMessage="required." [optional]="isOptional">
                 <form [formGroup]="twelveFormGroup">
                     <ng-template matStepLabel>Unités de logement</ng-template>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Généralités </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2368,41 +2394,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let unite of unite_logement[0].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+435}}
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="twelveCtrl1">
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Porte </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2410,42 +2436,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let unite of unite_logement[1].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+450}}
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="twelveCtrl2">
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Fenêtre </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2453,43 +2479,43 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let unite of unite_logement[2].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+457}}
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="twelveCtrl3">
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
-
+    
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Porte-bagages </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2497,42 +2523,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let unite of unite_logement[3].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+463}}
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="twelveCtrl4">
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
-
+    
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Placard/penderie/dressing </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2540,42 +2566,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let unite of unite_logement[4].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+466}}
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="twelveCtrl5">
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Lit </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2583,42 +2609,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let unite of unite_logement[5].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+481}}
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="twelveCtrl6">
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Table de chevet </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2626,41 +2652,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let unite of unite_logement[6].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+509}}
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="twelveCtrl7">
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Coiffeuse/bureau </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2668,41 +2694,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let unite of unite_logement[7].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+516}}
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="twelveCtrl8">
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Table et assises </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2710,42 +2736,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let unite of unite_logement[8].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+526}}
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="twelveCtrl9">
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Miroir </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2753,42 +2779,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let unite of unite_logement[9].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+530}}
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="twelveCtrl10">
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Boite à rebus </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2796,42 +2822,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let unite of unite_logement[10].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+533}}
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="twelveCtrl11">
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Télévision </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2839,42 +2865,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let unite of unite_logement[11].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+536}}
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="twelveCtrl12">
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Téléphone et Internet </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2882,41 +2908,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let unite of unite_logement[12].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+547}}
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="twelveCtrl13">
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Minibar </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2924,43 +2950,43 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let unite of unite_logement[13].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+555}}
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="twelveCtrl14">
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
-
+    
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Accessoires de boissons </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -2968,41 +2994,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let unite of unite_logement[14].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+564}}
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="twelveCtrl15">
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Room-directory </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3010,42 +3036,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let unite of unite_logement[15].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+574}}
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="twelveCtrl16">
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Services</h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3053,56 +3079,58 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let unite of unite_logement[16].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+578}}
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="twelveCtrl17">
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}" (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
-
-
+    
+    
+    
+    
                     <div>
                         <button mat-button matStepperPrevious class="back">Back</button>
-                        <button mat-button matStepperNext class="suivant">Suivant</button>
+                        <button mat-button matStepperNext class= "suivant" >Suivant</button>
+                          <p style="color:red;">{{message}}</p>
+                        <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
             </mat-step>
-
-
-            <mat-step [stepControl]="thirteenFormGroup" errorMessage="required.">
+    
+    
+            <mat-step [stepControl]="thirteenFormGroup" errorMessage="required." [optional]="isOptional">
                 <form [formGroup]="thirteenFormGroup">
                     <ng-template matStepLabel>Salle de bain privative</ng-template>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Généralités </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3110,41 +3138,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bain of  salle_bain_prive[0].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+587}}
                                 </td>
                                 <td class="col-sm-7"> {{bain.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="thirteenCtrl1">
                                         <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}" (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Lavabo </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3152,42 +3180,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bain of  salle_bain_prive[1].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+594}}
                                 </td>
                                 <td class="col-sm-7"> {{bain.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="thirteenCtrl2">
                                         <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}" (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Douche </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3195,43 +3223,43 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bain of  salle_bain_prive[2].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+609}}
                                 </td>
                                 <td class="col-sm-7"> {{bain.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="thirteenCtrl3">
                                         <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}" (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
-
+    
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Baignoire </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3239,42 +3267,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bain of  salle_bain_prive[3].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+626}}
                                 </td>
                                 <td class="col-sm-7"> {{bain.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="thirteenCtrl4">
                                         <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}" (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Autres équipements de la salle de bain </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3282,42 +3310,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bain of  salle_bain_prive[4].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+637}}
                                 </td>
                                 <td class="col-sm-7"> {{bain.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="thirteenCtrl5">
                                         <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}" (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Linge de la salle de bain </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3325,42 +3353,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bain of  salle_bain_prive[5].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+644}}
                                 </td>
                                 <td class="col-sm-7"> {{bain.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="thirteenCtrl6">
                                         <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}" (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Produits d\'accueil </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3368,41 +3396,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bain of  salle_bain_prive[6].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+654}}
                                 </td>
                                 <td class="col-sm-7"> {{bain.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="thirteenCtrl7">
                                         <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}" (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Cabines de toilette </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3410,42 +3438,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bain of  salle_bain_prive[7].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+669}}
                                 </td>
                                 <td class="col-sm-7"> {{bain.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="thirteenCtrl8">
                                         <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}" (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Toilette </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3453,54 +3481,56 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let bain of  salle_bain_prive[7].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+682}}
                                 </td>
                                 <td class="col-sm-7"> {{bain.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="thirteenCtrl9">
                                         <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}" (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div>
                         <button mat-button matStepperPrevious class="back">Back</button>
-                        <button mat-button matStepperNext class="suivant">Suivant</button>
+                        <button mat-button matStepperNext class= "suivant" >Suivant</button>
+                          <p style="color:red;">{{message}}</p>
+                        <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
             </mat-step>
-
-
-            <mat-step [stepControl]="forteenFormGroup" errorMessage="required.">
+    
+    
+            <mat-step [stepControl]="forteenFormGroup" errorMessage="required." [optional]="isOptional">
                 <form [formGroup]="forteenFormGroup">
                     <ng-template matStepLabel>Espace "Personnel"</ng-template>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Vestiaire du personnel </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3508,41 +3538,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let espace of espace_perso[0].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+695}}
                                 </td>
                                 <td class="col-sm-7"> {{espace.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="forteenCtrl1">
                                         <mat-radio-button *ngFor="let case of espace.case" value="{{case.numero}}" (change)="ch(i+1,espace.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Lavabos </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3550,42 +3580,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let espace of espace_perso[1].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+703}}
                                 </td>
                                 <td class="col-sm-7"> {{espace.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="forteenCtrl2">
                                         <mat-radio-button *ngFor="let case of espace.case" value="{{case.numero}}" (change)="ch(i+1,espace.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Toilettes du personnel </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3593,43 +3623,43 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let espace of espace_perso[2].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+709}}
                                 </td>
                                 <td class="col-sm-7"> {{espace.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="forteenCtrl3">
                                         <mat-radio-button *ngFor="let case of espace.case" value="{{case.numero}}" (change)="ch(i+1,espace.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
-
+    
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Douches du personnel </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3637,41 +3667,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let espace of espace_perso[3].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+716}}
                                 </td>
                                 <td class="col-sm-7"> {{espace.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="forteenCtrl4">
                                         <mat-radio-button *ngFor="let case of espace.case" value="{{case.numero}}" (change)="ch(i+1,espace.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Réfectoire du personnel </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3679,54 +3709,56 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let espace of espace_perso[4].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+723}}
                                 </td>
                                 <td class="col-sm-7"> {{espace.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="forteenCtrl5">
                                         <mat-radio-button *ngFor="let case of espace.case" value="{{case.numero}}" (change)="ch(i+1,espace.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div>
                         <button mat-button matStepperPrevious class="back">Back</button>
-                        <button mat-button matStepperNext class="suivant">Suivant</button>
+                        <button mat-button matStepperNext class= "suivant" >Suivant</button>
+                          <p style="color:red;">{{message}}</p>
+                        <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
             </mat-step>
-
-
-
-            <mat-step [stepControl]="fiveteenFormGroup" errorMessage="required.">
+    
+    
+    
+            <mat-step [stepControl]="fiveteenFormGroup" errorMessage="required." >
                 <form [formGroup]="fiveteenFormGroup">
                     <ng-template matStepLabel>Electricité, eau et assainissement</ng-template>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Energie </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3734,41 +3766,41 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let elect of elect_eau_ass [0].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+732}}
                                 </td>
                                 <td class="col-sm-7"> {{elect.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="fiveteenCtrl1">
                                         <mat-radio-button *ngFor="let case of elect.case" value="{{case.numero}}" (change)="ch(i+1,elect.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Eau </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3776,42 +3808,42 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let elect of elect_eau_ass[1].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+735}}
                                 </td>
                                 <td class="col-sm-7"> {{elect.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="fiveteenCtrl2">
                                         <mat-radio-button *ngFor="let case of elect.case" value="{{case.numero}}" (change)="ch(i+1,elect.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
+    
+    
                     <div class="rubrique mt-4">
                         <h2> Rubrique: Assainissement </h2>
                     </div>
-
+    
                     <table class="table">
                         <thead>
                             <tr>
@@ -3819,50 +3851,52 @@
                                 <th scope="col" style="color:#dd2251 ;"> Critères</th>
                                 <th scope="col" style="color: #dd2251;"> Notation</th>
                             </tr>
-
+    
                         </thead>
-
+    
                         <tbody>
                             <tr *ngFor=" let elect of elect_eau_ass[2].critere;let i = index">
-
+    
                                 <td class="col-sm-1"> {{i+741}}
                                 </td>
                                 <td class="col-sm-7"> {{elect.name}}
-
+    
                                     <br><br>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="NC">
                                         <label class="form-check-label" for="NC" style="color:#008663;">Non
                                             applicable</label>
                                     </div>
-
+    
                                 </td>
-
+    
                                 <td class="col-sm-4">
                                     <mat-radio-group formControlName="fiveteenCtrl3">
                                         <mat-radio-button *ngFor="let case of elect.case" value="{{case.numero}}" (change)="ch(i+1,elect.name,$event)" required>{{case.numero}}</mat-radio-button>
                                       </mat-radio-group>
                                 </td>
                             </tr>
-
-
-
+    
+    
+    
                         </tbody>
                     </table>
-
-
-
-
+    
+    
+    
+    
                     <div>
                         <button mat-button matStepperPrevious class="back">Back</button>
-                        <button mat-button matStepperNext class="suivant">Suivant</button>
+                        <button mat-button matStepperNext class= "suivant" >Suivant</button>
+                          <p style="color:red;">{{message}}</p>
+                        <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
             </mat-step>
-
+    
             <mat-step>
                 <ng-template matStepLabel>Done</ng-template>
-
+    
                 <div class="row justify-content-around mt-4">
                     <div class="col-4">
                         <button  mat-button class="back">Annuler</button>
@@ -3871,26 +3905,26 @@
                         <button  mat-button style="background-color:#008663;">soumettre</button>
                     </div>
                 </div>
-
-
-
-
+    
+    
+    
+    
                 <div class="mt-4">
                     <button mat-button matStepperPrevious class="back">Back</button>
                     <button mat-button>Reset</button>
                 </div>
             </mat-step> -->
         </mat-stepper>
-
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
+    
     </div>
-
-
-
-
-</div>
+    
+    
+    
+    
+    </div>

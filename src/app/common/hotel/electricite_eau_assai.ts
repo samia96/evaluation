@@ -8,6 +8,9 @@ export const ELECTRICITE_EAU_ASSAINISSEMENT = [
                 name: "L'établissement dispose d'un groupe électrogène, se déclenchant automatiquement en cas de coupure du courant.",
                  case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero:"0"
                     },
                     {
@@ -21,6 +24,9 @@ export const ELECTRICITE_EAU_ASSAINISSEMENT = [
                 name: "Le groupe électrogène est de capacité suffisante pour couvrir l'ensemble des besoins de l'établissement.",
                  case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero:"0"
                     },
                    {
@@ -33,6 +39,9 @@ export const ELECTRICITE_EAU_ASSAINISSEMENT = [
                 no: 3,
                 name: "Une partie de l'énergie utilisée par l'établissement est renouvelable.",
                  case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero:"0"
                     },
@@ -54,6 +63,9 @@ export const ELECTRICITE_EAU_ASSAINISSEMENT = [
                 name: "Dans le cas où l'établissement n'est pas connecté au réseau de distribution de l'eau potable, il dispose d'un réservoir d'eau ou un forage couvrant l'ensemble de ses besoins.",
                  case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero:"0"
                     },
                     {
@@ -66,6 +78,9 @@ export const ELECTRICITE_EAU_ASSAINISSEMENT = [
                 no: 2,
                 name: "En cas d'existence d'un puit, celui-ci est situé à une distance minimale de 15 mètres de tout dispositif d'assainissement liquide.",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero:"0"
                     },
@@ -80,6 +95,9 @@ export const ELECTRICITE_EAU_ASSAINISSEMENT = [
                 name: "L'eau du forage/réservoir régulièrement traitée.",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero:"0"
                     },
                     {
@@ -92,6 +110,9 @@ export const ELECTRICITE_EAU_ASSAINISSEMENT = [
                 no: 4,
                 name: "L'eau du forage/réservoir régulièrement analysée.",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero:"0"
                     },
@@ -106,6 +127,9 @@ export const ELECTRICITE_EAU_ASSAINISSEMENT = [
                 name: "L'établissement a mis en place un dispositif de récupération des eaux de la pluie",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero:"0"
                     },
                     {
@@ -118,6 +142,9 @@ export const ELECTRICITE_EAU_ASSAINISSEMENT = [
                 no: 6,
                 name: "Utilisation de produits de lavage écologiques.",
                  case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero:"0"
                     },
@@ -140,6 +167,9 @@ export const ELECTRICITE_EAU_ASSAINISSEMENT = [
                 name: "Dans le cas où l'établissement n'est pas connecté au réseau de d'assainissement public, une solution alternative adaptée est mise en place.",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero:"0"
                     },
                     {
@@ -152,6 +182,9 @@ export const ELECTRICITE_EAU_ASSAINISSEMENT = [
                 no: 2,
                 name: "L'établissement a mis en place un dispositif de récupération et réutilisation des eaux usées.",
                  case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero:"0"
                     },

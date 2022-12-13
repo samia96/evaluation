@@ -34,10 +34,12 @@ import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 export class HotelComponent implements OnInit {
 
   isOptional = false;
+  isEditable = false;
 
   responses: any[] = [];
-  obj!: any;
+  obj = 0;
   sh = true;
+  infoCombo: any[] = [];
 
   checked = false;
   indeterminate = false;
@@ -63,200 +65,112 @@ export class HotelComponent implements OnInit {
   unite_logement = UNITE_LOGEMENT;
   condition: boolean = false;
 
-  data_info_reser = {
-
-  }
+  forgetFormGroup!: FormGroup;
+  
 
   firstCtrl1!: string;
 
-  constructor(private _formBuilder: FormBuilder, public dialog: MatDialog) {
-
-    // this.secondFormGroup = this._formBuilder.group({
-    //   secondCtrl: ['', Validators.required],
-    //   secondCtrl1: ['', Validators.required],
-    //   secondCtrl2: ['', Validators.required],
-    //   secondCtrl3: ['', Validators.required],
-
-    // });
-    // this.forgetFormGroup = this._formBuilder.group({
-    //   forgetCtrl: ['', Validators.required],
-    //   forgetCtrl1: ['', Validators.required],
-    //   forgetCtrl2: ['', Validators.required],
-    //   forgetCtrl3: ['', Validators.required],
-    //   forgetCtrl4: ['', Validators.required],
-
-    // });
-
-    // this.thirdFormGroup = this._formBuilder.group({
-    //   thirdCtrl: ['', Validators.required],
-    //   thirdCtrl1: ['', Validators.required],
-    //   thirdCtrl2: ['', Validators.required],
-    //   thirdCtrl3: ['', Validators.required],
-    //   thirdCtrl4: ['', Validators.required],
+  constructor(private _formBuilder: FormBuilder, public dialog: MatDialog) { }
 
 
-    // });
 
-    // this.forFormGroup = this._formBuilder.group({
-    //   forCtrl: ['', Validators.required],
-    //   forCtrl1: ['', Validators.required],
-    //   forCtrl2: ['', Validators.required],
+  ngOnInit(): void {
+    
 
-    // });
-    // this.fiveFormGroup = this._formBuilder.group({
-    //   fiveCtrl: ['', Validators.required],
-    //   fiveCtrl1: ['', Validators.required],
-    //   fiveCtrl2: ['', Validators.required],
-    //   fiveCtrl3: ['', Validators.required],
-    //   fiveCtrl4: ['', Validators.required],
-    // });
-
-    // this.sixFormGroup = this._formBuilder.group({
-    //   sixCtrl: ['', Validators.required],
-    //   sixCtrl1: ['', Validators.required],
-    //   sixCtrl2: ['', Validators.required],
-    //   sixCtrl3: ['', Validators.required],
-    //   sixCtrl4: ['', Validators.required],
-    // });
-
-    // this.sevenFormGroup = this._formBuilder.group({
-    //   sevenCtrl: ['', Validators.required],
-    //   sevenCtrl1: ['', Validators.required],
-    //   sevenCtrl2: ['', Validators.required],
-    //   sevenCtrl3: ['', Validators.required],
-    //   sevenCtrl4: ['', Validators.required],
-    // });
-
-    // this.heigtFormGroup = this._formBuilder.group({
-    //   heigtCtrl: ['', Validators.required],
-    //   heigtCtrl1: ['', Validators.required],
-    //   heigtCtrl2: ['', Validators.required],
-
-    // });
-    // this.nineFormGroup = this._formBuilder.group({
-    //   nineCtrl: ['', Validators.required],
-    //   nineCtrl1: ['', Validators.required],
-    //   nineCtrl2: ['', Validators.required],
-    //   nineCtrl3: ['', Validators.required],
-    //   nineCtrl4: ['', Validators.required],
-    //   nineCtrl5: ['', Validators.required],
-    //   nineCtrl6: ['', Validators.required],
-    //   nineCtrl7: ['', Validators.required],
-    //   nineCtrl8: ['', Validators.required],
-    //   nineCtrl9: ['', Validators.required],
-    //   nineCtrl10: ['', Validators.required],
-    //   nineCtrl11: ['', Validators.required],
-
-    // });
-    // this.tenFormGroup = this._formBuilder.group({
-    //   tenCtrl: ['', Validators.required],
-    //   tenCtrl1: ['', Validators.required],
-    //   tenCtrl2: ['', Validators.required],
-    //   tenCtrl3: ['', Validators.required],
-    //   tenCtrl4: ['', Validators.required],
-    //   tenCtrl5: ['', Validators.required],
-    //   tenCtrl6: ['', Validators.required],
-    //   tenCtrl7: ['', Validators.required],
-    //   tenCtrl8: ['', Validators.required],
-
-    // });
-
-    // this.elevenFormGroup = this._formBuilder.group({
-    //   elevenCtrl: ['', Validators.required],
-    //   elevenCtrl1: ['', Validators.required],
-
-    // });
-
-    // this.twelveFormGroup = this._formBuilder.group({
-    //   twelveCtrl: ['', Validators.required],
-    //   twelveCtrl1: ['', Validators.required],
-    //   twelveCtrl2: ['', Validators.required],
-    //   twelveCtrl3: ['', Validators.required],
-    //   twelveCtrl4: ['', Validators.required],
-    //   twelveCtrl5: ['', Validators.required],
-    //   twelveCtrl6: ['', Validators.required],
-    //   twelveCtrl7: ['', Validators.required],
-    //   twelveCtrl8: ['', Validators.required],
-    //   twelveCtrl9: ['', Validators.required],
-    //   twelveCtrl10: ['', Validators.required],
-    //   twelveCtrl11: ['', Validators.required],
-    //   twelveCtrl12: ['', Validators.required],
-    //   twelveCtrl13: ['', Validators.required],
-    //   twelveCtrl14: ['', Validators.required],
-    //   twelveCtrl15: ['', Validators.required],
-    //   twelveCtrl16: ['', Validators.required],
-    //   twelveCtrl17: ['', Validators.required],
-
-    // });
-
-    // this.thirteenFormGroup = this._formBuilder.group({
-    //   thirteenCtrl: ['', Validators.required],
-    //   thirteenCtrl1: ['', Validators.required],
-    //   thirteenCtrl2: ['', Validators.required],
-    //   thirteenCtrl3: ['', Validators.required],
-    //   thirteenCtrl4: ['', Validators.required],
-    //   thirteenCtrl5: ['', Validators.required],
-    //   thirteenCtrl6: ['', Validators.required],
-    //   thirteenCtrl7: ['', Validators.required],
-    //   thirteenCtrl8: ['', Validators.required],
-    //   thirteenCtrl9: ['', Validators.required],
-
-    // });
-
-    // this.forteenFormGroup = this._formBuilder.group({
-    //   forteenCtrl: ['', Validators.required],
-    //   forteenCtrl1: ['', Validators.required],
-    //   forteenCtrl2: ['', Validators.required],
-    //   forteenCtrl3: ['', Validators.required],
-    //   forteenCtrl4: ['', Validators.required],
-    //   forteenCtrl5: ['', Validators.required],
-
-    // });
-    // this.fiveteenFormGroup = this._formBuilder.group({
-    //   fiveteenCtrl: ['', Validators.required],
-    //   fiveteenCtrl1: ['', Validators.required],
-    //   fiveteenCtrl2: ['', Validators.required],
-    //   fiveteenCtrl3: ['', Validators.required],
-
-    // });
-    // this.sixteenFormGroup = this._formBuilder.group({
-    //   sixteenCtrl: ['', Validators.required],
-    // });
-
-    // this.firstFormGroup = this._formBuilder.group({
-      // firstCtrl: new FormControl('', Validators.required),
-      // firstCtrl1: new FormControl('', Validators.required),
-      // firstCtrl2: new FormControl('', Validators.required),
-      // firstCtrl3: new FormControl('', Validators.required)
-    //   firstCtrl: ['', Validators.required],
-    //   firstCtrl1: ['', Validators.required],
-    //   firstCtrl2: ['', Validators.required],
-    //   firstCtrl3: ['', Validators.required],
-
-    // });
-
-
-  }
-
+    this.validate();
+    this.forgetFormGroup = this._formBuilder.group(
+      this.accueil,
+      
+      
+      
+      
+    //   {
+  
+    //   this.accueil,
+        
+    //   // forgetCtrl: ['', Validators.required],
+    //   // forgetCtrl1: ['', Validators.required],
+    //   // forgetCtrl2: ['', Validators.required],
+    //   // forgetCtrl3: ['', Validators.required],
+    //   // forgetCtrl4: ['', Validators.required],
+  
+  
+    //  }
+     
+     );
+    console.log(this.forgetFormGroup);
+       
+     
+ }
 
   secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    //secondCtrl: ['', Validators.required],
     secondCtrl1: ['', Validators.required],
     secondCtrl2: ['', Validators.required],
     secondCtrl3: ['', Validators.required],
 
   });
-  forgetFormGroup = this._formBuilder.group({
-    forgetCtrl: ['', Validators.required],
-    forgetCtrl1: ['', Validators.required],
-    forgetCtrl2: ['', Validators.required],
-    forgetCtrl3: ['', Validators.required],
-    forgetCtrl4: ['', Validators.required],
 
-  });
+  accueil: Object= []; 
+
+  accueil2: Object= {}; 
+
+
+
+ 
+ forgeFormGroup = this._formBuilder.group(
+  this.accueil2
+//   {
+//   forgeCtrl1: ['', Validators.required],
+//   forgeCtrl2: ['', Validators.required],
+
+// }
+
+);
+   
+
+ validate() {
+
+  for (let i = 1; i <= 2; i++) {
+    Object.assign(this.accueil2,{["forgeCtrl1"] : ['', Validators.required]})
+
+  }
+
+  console.log("+++++++++++++++++++++++++++++++++++++++++++++++++")
+  console.log(this.accueil2)
+
+
+
+  for (let i = 1; i <= this.accueil_recep[0].critere.length; i++) {
+    Object.assign(this.accueil,{["forgetCtrl"+i] : "['', Validators.required]"})
+    //this.accueil.({["forgetCtrl"+i] : "['', Validators.required]"})
+
+    //console.log(i);
+    
+  }
+    // Object.assign(
+    // this.accueil,{
+    //   forgetCtrl11: ['', Validators.required],
+    //  forgetCtrl12: ['', Validators.required],
+    // forgetCtrl13: ['', Validators.required],
+    // forgetCtrl14: ['', Validators.required],
+    // })  
+  
+    
+  
+
+  console.log(this.accueil);
+  
+   
+ }  
+
+
+
+
+   
 
   thirdFormGroup = this._formBuilder.group({
-    thirdCtrl: ['', Validators.required],
+    //thirdCtrl: ['', Validators.required],
     thirdCtrl1: ['', Validators.required],
     thirdCtrl2: ['', Validators.required],
     thirdCtrl3: ['', Validators.required],
@@ -266,13 +180,13 @@ export class HotelComponent implements OnInit {
   });
 
   forFormGroup = this._formBuilder.group({
-    forCtrl: ['', Validators.required],
+    //forCtrl: ['', Validators.required],
     forCtrl1: ['', Validators.required],
     forCtrl2: ['', Validators.required],
 
   });
   fiveFormGroup = this._formBuilder.group({
-    fiveCtrl: ['', Validators.required],
+    //fiveCtrl: ['', Validators.required],
     fiveCtrl1: ['', Validators.required],
     fiveCtrl2: ['', Validators.required],
     fiveCtrl3: ['', Validators.required],
@@ -280,7 +194,7 @@ export class HotelComponent implements OnInit {
   });
 
   sixFormGroup = this._formBuilder.group({
-    sixCtrl: ['', Validators.required],
+   // sixCtrl: ['', Validators.required],
     sixCtrl1: ['', Validators.required],
     sixCtrl2: ['', Validators.required],
     sixCtrl3: ['', Validators.required],
@@ -288,7 +202,7 @@ export class HotelComponent implements OnInit {
   });
 
   sevenFormGroup = this._formBuilder.group({
-    sevenCtrl: ['', Validators.required],
+    //sevenCtrl: ['', Validators.required],
     sevenCtrl1: ['', Validators.required],
     sevenCtrl2: ['', Validators.required],
     sevenCtrl3: ['', Validators.required],
@@ -296,13 +210,13 @@ export class HotelComponent implements OnInit {
   });
 
     heigtFormGroup = this._formBuilder.group({
-    heigtCtrl: ['', Validators.required],
+   // heigtCtrl: ['', Validators.required],
     heigtCtrl1: ['', Validators.required],
     heigtCtrl2: ['', Validators.required],
 
   });
     nineFormGroup = this._formBuilder.group({
-    nineCtrl: ['', Validators.required],
+    //nineCtrl: ['', Validators.required],
     nineCtrl1: ['', Validators.required],
     nineCtrl2: ['', Validators.required],
     nineCtrl3: ['', Validators.required],
@@ -317,7 +231,7 @@ export class HotelComponent implements OnInit {
 
   });
     tenFormGroup = this._formBuilder.group({
-    tenCtrl: ['', Validators.required],
+    //tenCtrl: ['', Validators.required],
     tenCtrl1: ['', Validators.required],
     tenCtrl2: ['', Validators.required],
     tenCtrl3: ['', Validators.required],
@@ -330,13 +244,13 @@ export class HotelComponent implements OnInit {
   });
 
     elevenFormGroup = this._formBuilder.group({
-    elevenCtrl: ['', Validators.required],
+    //elevenCtrl: ['', Validators.required],
     elevenCtrl1: ['', Validators.required],
 
   });
 
     twelveFormGroup = this._formBuilder.group({
-    twelveCtrl: ['', Validators.required],
+    //twelveCtrl: ['', Validators.required],
     twelveCtrl1: ['', Validators.required],
     twelveCtrl2: ['', Validators.required],
     twelveCtrl3: ['', Validators.required],
@@ -358,7 +272,7 @@ export class HotelComponent implements OnInit {
   });
 
     thirteenFormGroup = this._formBuilder.group({
-    thirteenCtrl: ['', Validators.required],
+    //thirteenCtrl: ['', Validators.required],
     thirteenCtrl1: ['', Validators.required],
     thirteenCtrl2: ['', Validators.required],
     thirteenCtrl3: ['', Validators.required],
@@ -372,7 +286,7 @@ export class HotelComponent implements OnInit {
   });
 
     forteenFormGroup = this._formBuilder.group({
-    forteenCtrl: ['', Validators.required],
+    //forteenCtrl: ['', Validators.required],
     forteenCtrl1: ['', Validators.required],
     forteenCtrl2: ['', Validators.required],
     forteenCtrl3: ['', Validators.required],
@@ -381,7 +295,7 @@ export class HotelComponent implements OnInit {
 
   });
     fiveteenFormGroup = this._formBuilder.group({
-    fiveteenCtrl: ['', Validators.required],
+    //fiveteenCtrl: ['', Validators.required],
     fiveteenCtrl1: ['', Validators.required],
     fiveteenCtrl2: ['', Validators.required],
     fiveteenCtrl3: ['', Validators.required],
@@ -396,11 +310,9 @@ export class HotelComponent implements OnInit {
     // firstCtrl1: new FormControl('', Validators.required),
     // firstCtrl2: new FormControl('', Validators.required),
     // firstCtrl3: new FormControl('', Validators.required)
-    firstCtrl: ['', Validators.required],
     firstCtrl1: ['', Validators.required],
     firstCtrl2: ['', Validators.required],
-    firstCtrl3: ['', Validators.required],
-
+  
   });
 
 
@@ -421,22 +333,6 @@ export class HotelComponent implements OnInit {
 
   
 
-  ngOnInit(): void {
-    // console.log(INFORMATION_RESERVATION);
-
-    
-
-    // this.info_reser.forEach(element => {
-    //   console.log(element.critere[0].case[0].numero);
-
-    // });
-
-    /* this.unite_logement.forEach(element => {
-      console.log(element.critere);
-      
-    }); */
-
- }
 
   onSubmit(): void {
     console.log('eee');
@@ -498,9 +394,11 @@ export class HotelComponent implements OnInit {
       rubrique: rubriq
     }
 
-    this.obj = this.responses.find((el: any) => {
-      return el.id === data.id
-    });
+this.obj = no;
+
+    // this.obj = this.responses.find((el: any) => {
+    //   return el.id === data.id
+    // });
 
     const indexObject = this.responses.findIndex((el: any) => {
       return el.id === data.id
@@ -514,14 +412,40 @@ export class HotelComponent implements OnInit {
     }
 
     console.log(this.responses);
+    console.log(this.obj);
+    
   }
 
-  hh() {
+  // hh() {
 
-    console.log(this.firstFormGroup.controls['firstCtrl'].value);
+  //   console.log(this.firstFormGroup.controls['firstCtrl'].value);
+  // }
 
+  changed(data: any, e: any): void {
+    const indexObject = this.infoCombo.findIndex((el: any) => {
+      return el.name === data.name
+    });
 
+    this.infoCombo.splice(indexObject, 1);
+    
+    let jj = false;
+    if (e.target.checked) {
+      jj = false;
+    } else {
+      jj = true;
+    }
 
+    const add = {
+      no: data.no,
+      name: data.name,
+      sh: jj,
+      nc: data.nc,
+      case: data.case
+    };
+    this.infoCombo.push(add);
+
+    console.log(this.infoCombo);
+    
   }
 
 }

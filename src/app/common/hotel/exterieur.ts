@@ -8,6 +8,9 @@ export const EXTERIEUR = [
                 name: "L'établissement dispose d'un parking et/ou d'un garage réservé aux clients de l'établissement et permettant un accès direct à l'entrée.",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero: "0"
                     },
                     {
@@ -19,6 +22,9 @@ export const EXTERIEUR = [
                 no: 2,
                 name: "Pour la catégorie 5 étoiles, le nombre d'emplacements du parking est conforme aux ratios suivants : un emplacement pour 5 unités de logement + 1 emplacement pour 8 places au niveau des salles de séminaires. Pour les établissements déjà opérationnels au jour de publication des normes, un écart de 20% par rapport à ces ratios est toléré.",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero: "0"
                     },
@@ -32,6 +38,9 @@ export const EXTERIEUR = [
                 name: "Pour la catégorie 4 étoiles, le nombre d'emplacements du parking est conforme aux ratios suivants : un emplacement pour 8 unités de logement + 1 emplacement pour 10 places au niveau des salles de séminaires. Pour les établissements déjà opérationnels au jour de publication des normes, un écart de 20% par rapport à ces ratios est toléré.",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero: "0"
                     },
                     {
@@ -43,6 +52,9 @@ export const EXTERIEUR = [
                 no: 4,
                 name: "Pour la catégorie 3 étoiles, le nombre d'emplacements du parking est conforme aux ratios suivants : un emplacement pour 10 unités de logement + 1 emplacement pour 12 places au niveau des salles de séminaires. Pour les établissements déjà opérationnels au jour de publication des normes, un écart de 20% par rapport à ces ratios est toléré.",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero: "0"
                     },
@@ -56,6 +68,9 @@ export const EXTERIEUR = [
                 name: "Le parking est bien éclairé, de jour comme de nuit.",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero: "0"
                     },
                     {
@@ -67,6 +82,9 @@ export const EXTERIEUR = [
                 no: 6,
                 name: "Le parking est propre",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero: "0"
                     },
@@ -86,6 +104,9 @@ export const EXTERIEUR = [
                 name: "Le sol du parking dispose d'un revêtement adéquat, sécurisé et en bon état",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero: "0"
                     },
                     {
@@ -98,6 +119,9 @@ export const EXTERIEUR = [
                 no: 8,
                 name: "Les emplacements de stationnement sont signalés et bien visibles.",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero: "0"
                     },
@@ -112,6 +136,9 @@ export const EXTERIEUR = [
                 name: "Le parking est surveillé, de jour comme de nuit",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero: "0"
                     },
                     {
@@ -124,6 +151,9 @@ export const EXTERIEUR = [
                 no: 10,
                 name: "Un ou plusieurs emplacements sont réservés aux personnes à mobilité réduite et sont signalés.",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero: "0"
                     },
@@ -139,6 +169,9 @@ export const EXTERIEUR = [
                 name: "L'établissement dispose d'une zone de dépose-minute devant l'entrée de l'établissement.",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero: "0"
                     },
                     {
@@ -151,6 +184,9 @@ export const EXTERIEUR = [
                 no: 12,
                 name: "La zone de dépose-minute est abritée des intempéries.",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero: "0"
                     },
@@ -165,6 +201,9 @@ export const EXTERIEUR = [
                 name: "L'établissement propose un service de voiturier bien visible aux clients.",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero: "0"
                     },
                     {
@@ -177,6 +216,9 @@ export const EXTERIEUR = [
                 no: 14,
                 name: "La tenue du/des voiturier(s) est propre.",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero: "0"
                     },
@@ -197,6 +239,9 @@ export const EXTERIEUR = [
                 no: 15,
                 name: "La tenue du/des voiturier(s) est en bon état",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero: "0"
                     },
@@ -224,6 +269,9 @@ export const EXTERIEUR = [
                 name: "L'établissement dispose d'un ou plusieurs espaces verts d'une superficie minimale de 200 m².",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero: "0"
                     },
                     {
@@ -236,6 +284,9 @@ export const EXTERIEUR = [
                 no: 2,
                 name: "Les espaces verts de l'établissement sont propres.",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero: "0"
                     },
@@ -256,6 +307,9 @@ export const EXTERIEUR = [
                 name: "Les espaces verts de l'établissement sont propres et bien entretenus.",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero: "0"
                     },
                     {
@@ -275,6 +329,9 @@ export const EXTERIEUR = [
                 name: "L'établissement ne fait pas usage des pesticides et engrais chimiques.",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero: "0"
                     },
                     {
@@ -287,6 +344,9 @@ export const EXTERIEUR = [
                 no: 5,
                 name: "Les déchets organiques sont valorisés en compostes.",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero: "0"
                     },
@@ -310,6 +370,9 @@ export const EXTERIEUR = [
                 name: "L'établissement dispose d'une enseigne comportant le nom de l'établissement et bien visible aux clients.",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero: "0"
                     },
                     {
@@ -322,6 +385,9 @@ export const EXTERIEUR = [
                 no: 2,
                 name: "L'enseigne est propre.",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero: "0"
                     },
@@ -342,6 +408,9 @@ export const EXTERIEUR = [
                 name: "L'enseigne est en bon état.",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero: "0"
                     },
                     {
@@ -360,6 +429,9 @@ export const EXTERIEUR = [
                 no: 4,
                 name: "L'enseigne est éclairée la nuit.",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero: "0"
                     },
@@ -382,6 +454,9 @@ export const EXTERIEUR = [
                 name: "Les façades et autres éléments extérieurs de l'établissement sont propres.",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero: "0"
                     },
                     {
@@ -401,6 +476,9 @@ export const EXTERIEUR = [
                 name: "Les façades et autres éléments extérieurs de l'établissement sont en bon état.",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero: "0"
                     },
                     {
@@ -419,6 +497,9 @@ export const EXTERIEUR = [
                 no: 3,
                 name: "Lorsque l'établissement est éclaté en plusieurs bâtiments, une signalétique indiquant ses différentes composantes existe.",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero: "0"
                     },

@@ -8,6 +8,9 @@ export const BOUTIQUE = [
                 name: "L'établissement dispose d'une ou de plusieurs boutiques.",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero:"0"
                     },
                     {
@@ -19,6 +22,9 @@ export const BOUTIQUE = [
                 no: 2,
                 name: "L'établissement assure un affichage des prix des différents objets vendus dans la boutique ainsi que toute autre taxe ou charge supplémentaire à supporter par le client.",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero:"0"
                     },
@@ -32,6 +38,9 @@ export const BOUTIQUE = [
                 name: "Le paiement par carte bancaire internationale est possible (au minimum deux types de cartes bancaires).",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero:"0"
                     },
                     {
@@ -43,6 +52,9 @@ export const BOUTIQUE = [
                 no: 4,
                 name: "L'établissement affiche les moyens de paiement acceptés.",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero:"0"
                     },
@@ -56,6 +68,9 @@ export const BOUTIQUE = [
                 name: "La boutique propose des objets d'artisanat, de terroir ou d'art béninois.",
                 case: [
                     {
+                        numero: "NC"
+                    },
+                    {
                         numero:"0"
                     },
                     {
@@ -67,6 +82,9 @@ export const BOUTIQUE = [
                 no: 6,
                 name: "La boutique est propre",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero:"0"
                     },
@@ -85,6 +103,9 @@ export const BOUTIQUE = [
                 no: 7,
                 name: "La boutique est en bon état.",
                 case: [
+                    {
+                        numero: "NC"
+                    },
                     {
                         numero:"0"
                     },

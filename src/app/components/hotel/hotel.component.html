@@ -50,8 +50,12 @@
 
         <mat-stepper orientation="vertical" linear #stepper>
 
-            <mat-step [stepControl]="forgeFormGroup" [editable]="isEditable">
-                <form [formGroup]="forgeFormGroup">
+         
+
+
+
+            <mat-step [stepControl]="forgetFormGroup">
+                <form [formGroup]="forgetFormGroup">
                     <ng-template matStepLabel>Accueil et Réception</ng-template>
                     
                     <div class="rubrique mt-4">
@@ -68,46 +72,23 @@
                         </thead>
 
                         <tbody>
-                          <!-- <tr *ngFor="let accueil of accueil_recep[0].critere;let i = index"> -->
+                          <tr *ngFor="let accueil of accueil_recep[0].critere;let i = index">
 
-                            <tr>
-                                    <td>1</td>
-                                  <td>dfjoezjfij</td> 
-                                <!-- <td class="col-sm-1"> {{i+1}}
+                        
+                                    
+                                <td class="col-sm-1"> {{i+1}}
                                 </td>
                                 <td class="col-sm-7"> {{accueil.name}}
 
-                                </td> -->
-
-                                <td class="col-sm-4">
-                                      <mat-radio-group formControlName="forgeCtrl1" required>
-                                        <mat-radio-button value="1">1</mat-radio-button>
-                                        <mat-radio-button value="2">2</mat-radio-button>
-
-                                    </mat-radio-group>
-
-                                    
-
-                                    <!-- <mat-radio-group formControlName="forgetCtrl{{i+1}}" required>
-                                        <mat-radio-button *ngFor="let case of accueil.case" value="{{case.numero}}"
-                                            (change)="ch(i+1,accueil.name,$event)">{{case.numero}}</mat-radio-button>
-                                    </mat-radio-group> -->
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="forgeCtrl2" required>
-                                      <mat-radio-button value="1">1</mat-radio-button>
-                                      <mat-radio-button value="2">2</mat-radio-button>
+                                    <mat-radio-group formControlName="forgetCtrl{{i+1}}">
+                                    <mat-radio-button *ngFor="let case of accueil.case" value="{{case.numero}}"
+                                            (change)="ch(i+1,accueil.name,$event)" required>{{case.numero}}</mat-radio-button>
+                                    </mat-radio-group> 
+                                </td>
 
-                                  </mat-radio-group>
-
-                                  
-
-                                  <!-- <mat-radio-group formControlName="forgetCtrl{{i+1}}" required>
-                                      <mat-radio-button *ngFor="let case of accueil.case" value="{{case.numero}}"
-                                          (change)="ch(i+1,accueil.name,$event)">{{case.numero}}</mat-radio-button>
-                                  </mat-radio-group> -->
-                              </td>
                             </tr>
 
 
@@ -116,7 +97,7 @@
                     </table>
                 
 
-                    <!-- <div class="rubrique mt-4">
+                    <div class="rubrique mt-4">
                         <h2> Rubrique: Hall d'accueil et salons </h2>
                     </div>
 
@@ -138,7 +119,7 @@
                                 <td class="col-sm-7"> {{accueil.name}} </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="forgetCtrl11" required>
+                                    <mat-radio-group formControlName="forgetCtrl{{i+10}}">
                                         <mat-radio-button *ngFor="let case of accueil.case" value="{{case.numero}}"
                                             (change)="ch(i+1,accueil.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -175,7 +156,7 @@
                                     } </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="forgetCtrl12" required>
+                                    <mat-radio-group formControlName="forgetCtrl{{i+31}}" required>
                                         <mat-radio-button *ngFor="let case of accueil.case" value="{{case.numero}}"
                                             (change)="ch(i+1,accueil.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -212,7 +193,7 @@
                                     } </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="forgetCtrl13" required>
+                                    <mat-radio-group formControlName="forgetCtrl{{i+51}}" required>
                                         <mat-radio-button *ngFor="let case of accueil.case" value="{{case.numero}}"
                                             (change)="ch(i+1,accueil.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -248,7 +229,7 @@
                                     } </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="forgetCtrl14" required>
+                                    <mat-radio-group formControlName="forgetCtrl{{i+68}}" required>
                                         <mat-radio-button *ngFor="let case of accueil.case" value="{{case.numero}}"
                                             (change)="ch(i+1,accueil.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -259,18 +240,17 @@
 
 
                         </tbody>
-                    </table> -->
+                    </table>
                 
                     <div>
-                        <button mat-button matStepperPrevious class="back">Précédent</button>
                         <button mat-button matStepperNext  class="suivant">Suivant</button>
                         <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
-            </mat-step>
+            </mat-step> 
 
 
-            <mat-step [stepControl]="firstFormGroup" [optional]="isOptional">
+            <mat-step [stepControl]="firstFormGroup">
                 <form [formGroup]="firstFormGroup">
                     <ng-template matStepLabel>Information et Réservation</ng-template>
 
@@ -290,25 +270,21 @@
 
                         <tbody>
                             <tr *ngFor=" let info of info_reser[0].critere;let i = index">
-                                <!-- Numero ordre -->
+                              
                                 <td class="col-sm-1"> {{i+70}}
                                 </td>
-                                <!-- Critere libelle -->
+                             
                                 <td class="col-sm-7">
                                     <div>
                                         {{info.name}}
                                     </div>
-                                    <!-- <div class="mt-2 form-check form-switch">
-                                        <input class="form-check-input" type="checkbox"  name="firstCtrl" formControlName="firstCtrl"
-                                            required (change)="changed(info, $event)">
-                                        <label class="form-check-label" for="NC" style="color:#008663;">{{info.nc}}</label>
-                                     (change)="chh(i+70,info.name,$event,'Information et Réservation','Information')" 
-                                    </div> -->
+                                    
                                 </td>
-                                <!-- Critere notation -->
+                             
                                 <td class="col-sm-4">
                                     <div>
-                                        <mat-radio-group formControlName="firstCtrl1" required>
+                                        <mat-radio-group formControlName="firstCtrl{{i+1}}">
+                                            firstCtrl{{i+1}}
                                             <mat-radio-button *ngFor="let case of info.case" value="{{case.numero}}"
                                                 (change)="ch(i+70,info.name,$event,'Information et Réservation','Information')"
                                                 required>{{case.numero}}</mat-radio-button>
@@ -334,32 +310,25 @@
 
                         <tbody>
                             <tr *ngFor=" let info of info_reser[1].critere;let i = index">
-                                <!-- Numero ordre -->
+                               
                                 <td class="col-sm-1"> {{i+75}}
                                 </td>
-                                <!-- Critere libelle -->
+                                
                                 <td class="col-sm-7">
                                     <div>
                                         {{info.name}}
                                     </div>
-                                    <!-- <div class="mt-2 form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" name="firstCtrl2"
-                                            formControlName="firstCtrl2" required>
-                                        <label class="form-check-label" for="NC" style="color:#008663;">{{info.nc}}</label>
-                                    </div> -->
+                                    
                                 </td>
-                                <!-- Critere notation -->
+                               
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="firstCtrl2" required>
+                                    <mat-radio-group formControlName="firstCtrl{{i+6}}" required>
+                                        firstCtrl{{i+6}}
                                         <mat-radio-button *ngFor="let case of info.case" value="case.numero"
                                             (change)="ch(i+75,info.name,$event,'Information et Réservation','Réservation')">
                                             {{case.numero}}</mat-radio-button>
                                     </mat-radio-group>
-                                    <!-- <div class="form-check form-check-inline " *ngFor="let case of info.case" id="text">
-                                        <input class="form-check-input" type="radio" name="firstCtrl" id="inlineRadio"
-                                            value="option" formControlName="firstCtrl" required>
-                                        <label class="form-check-label" for="inlineRadio"> {{case.numero}} </label>
-                                    </div> -->
+                                   
                                 </td>
                             </tr>
 
@@ -378,7 +347,6 @@
                 </form>
             </mat-step>
 
-          
             <mat-step [stepControl]="secondFormGroup" [optional]="isOptional">
                 <form [formGroup]="secondFormGroup">
                     <ng-template matStepLabel>Extérieur</ng-template>
@@ -407,7 +375,8 @@
                                 </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="secondCtrl1" required>
+                                    <mat-radio-group formControlName="secondCtrl{{i+1}}" required>
+                                       
                                         <mat-radio-button *ngFor="let case of ext.case" value="{{case.numero}}"
                                             (change)="ch(i+1,ext.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -445,7 +414,46 @@
                                     } </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="secondCtrl2" required>
+                                    <mat-radio-group formControlName="secondCtrl{{i+16}}" required>
+                                        
+                                        <mat-radio-button *ngFor="let case of ext.case" value="{{case.numero}}"
+                                            (change)="ch(i+1,ext.name,$event)" required>{{case.numero}}
+                                        </mat-radio-button>
+                                    </mat-radio-group>
+                                </td>
+                            </tr>
+
+
+
+                        </tbody>
+                    </table>
+
+                    <div class="rubrique mt-4">
+                        <h2> Rubrique: Enseigne </h2>
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="color:#dd2251 ;"> No</th>
+                                <th scope="col" style="color:#dd2251 ;"> Critères</th>
+                                <th scope="col" style="color: #dd2251;"> Notation</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor=" let ext of exterieur[2].critere;let i = index">
+
+                                <td class="col-sm-1"> {{i+98}}
+                                </td>
+                                <td class="col-sm-7"> {{ext.name}}
+
+                                    } </td>
+
+                                <td class="col-sm-4">
+                                    <mat-radio-group formControlName="secondCtrl{{i+21}}" required>
+                                       
                                         <mat-radio-button *ngFor="let case of ext.case" value="{{case.numero}}"
                                             (change)="ch(i+1,ext.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -473,7 +481,7 @@
                         </thead>
 
                         <tbody>
-                            <tr *ngFor=" let ext of exterieur[2].critere;let i = index">
+                            <tr *ngFor=" let ext of exterieur[3].critere;let i = index">
 
                                 <td class="col-sm-1"> {{i+98}}
                                 </td>
@@ -482,8 +490,8 @@
                                     } </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="secondCtrl3" required>
-                                        <mat-radio-button *ngFor="let case of ext.case" value="{{case.numero}}"
+                                    <mat-radio-group formControlName="secondCtrl{{i+25}}" required>
+                                    <mat-radio-button *ngFor="let case of ext.case" value="{{case.numero}}"
                                             (change)="ch(i+1,ext.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
                                     </mat-radio-group>
@@ -503,7 +511,7 @@
                     </div>
                 </form>
             </mat-step>
-
+           -->
 
 
 
@@ -534,10 +542,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{san.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="thirdCtrl1" required>
+                                    <mat-radio-group formControlName="thirdCtrl{{i+1}}" required>
+                                       
                                         <mat-radio-button *ngFor="let case of san.case" value="{{case.numero}}"
                                             (change)="ch(i+1,san.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -572,10 +581,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{san.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="thirdCtrl2">
+                                    <mat-radio-group formControlName="thirdCtrl{{i+10}}">
+                                       
                                         <mat-radio-button *ngFor="let case of san.case" value="{{case.numero}}"
                                             (change)="ch(i+1,san.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -611,10 +621,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{san.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="thirdCtrl3" required>
+                                    <mat-radio-group formControlName="thirdCtrl{{i+25}}" required>
+                                        
                                         <mat-radio-button *ngFor="let case of san.case" value="{{case.numero}}"
                                             (change)="ch(i+1,san.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -650,10 +661,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{san.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="thirdCtrl4" required>
+                                    <mat-radio-group formControlName="thirdCtrl{{i+29}}" required>
+                                       
                                         <mat-radio-button *ngFor="let case of san.case" value="{{case.numero}}"
                                             (change)="ch(i+1,san.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -679,7 +691,7 @@
 
 
 
-            <mat-step [stepControl]="forFormGroup" errorMessage=" required." [optional]="isOptional">
+             <mat-step [stepControl]="forFormGroup" errorMessage=" required." [optional]="isOptional">
                 <form [formGroup]="forFormGroup">
                     <ng-template matStepLabel>Circulation</ng-template>
 
@@ -707,7 +719,8 @@
                                     } </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="forCtrl1" required>
+                                    <mat-radio-group formControlName="forCtrl{{i+1}}" required>
+                                       
                                         <mat-radio-button *ngFor="let case of cir.case" value="{{case.numero}}"
                                             (change)="ch(i+1,cir.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -746,7 +759,7 @@
                                     } </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="forCtrl2" required>
+                                    <mat-radio-group formControlName="forCtrl{{i+10}}" required>
                                         <mat-radio-button *ngFor="let case of cir.case" value="{{case.numero}}"
                                             (change)="ch(i+1,cir.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -774,12 +787,12 @@
                         <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
-            </mat-step>
+            </mat-step> 
 
 
 
 
-            <mat-step [stepControl]="fiveFormGroup" errorMessage="required." [optional]="isOptional">
+             <mat-step [stepControl]="fiveFormGroup" errorMessage="required." [optional]="isOptional">
                 <form [formGroup]="fiveFormGroup">
                     <ng-template matStepLabel>Petit Déjeuner</ng-template>
 
@@ -804,10 +817,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{ptit.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="fiveCtrl1" required>
+                                    <mat-radio-group formControlName="fiveCtrl{{i+1}}" required>
+                                       
                                         <mat-radio-button *ngFor="let case of ptit.case" value="{{case.numero}}"
                                             (change)="ch(i+1,ptit.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -843,17 +857,17 @@
                                 </td>
                                 <td class="col-sm-7"> {{ptit.name}}
 
-                                    } </td>
+                                    </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="fiveCtrl2" required>
+                                    <mat-radio-group formControlName="fiveCtrl{{i+12}}" required>
+                                       
                                         <mat-radio-button *ngFor="let case of ptit.case" value="{{case.numero}}"
                                             (change)="ch(i+1,ptit.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
                                     </mat-radio-group>
                                 </td>
                             </tr>
-
 
 
                         </tbody>
@@ -881,10 +895,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{ptit.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="fiveCtrl3" required>
+                                    <mat-radio-group formControlName="fiveCtrl{{i+21}}" required>
+                                       
                                         <mat-radio-button *ngFor="let case of ptit.case" value="{{case.numero}}"
                                             (change)="ch(i+1,ptit.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -919,10 +934,10 @@
                                 </td>
                                 <td class="col-sm-7"> {{ptit.name}}
 
-                                    } </td>
+                                    </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="fiveCtrl4" required>
+                                    <mat-radio-group formControlName="fiveCtrl{{i+28}}" required>
                                         <mat-radio-button *ngFor="let case of ptit.case" value="{{case.numero}}"
                                             (change)="ch(i+1,ptit.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -943,10 +958,10 @@
                         <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
-            </mat-step>
+            </mat-step> -->
 
 
-            <mat-step [stepControl]="sixFormGroup" errorMessage="required." [optional]="isOptional">
+             <mat-step [stepControl]="sixFormGroup" errorMessage="required." [optional]="isOptional">
                 <form [formGroup]="sixFormGroup">
                     <ng-template matStepLabel>Restaurant</ng-template>
 
@@ -971,10 +986,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{rest.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="sixCtrl1" required>
+                                    <mat-radio-group formControlName="sixCtrl{{i+1}}" required>
+                                        
                                         <mat-radio-button *ngFor="let case of rest.case" value="{{case.numero}}"
                                             (change)="ch(i+1,rest.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1008,10 +1024,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{rest.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="sixCtrl2" required>
+                                    <mat-radio-group formControlName="sixCtrl{{i+15}}" required>
+                                       
                                         <mat-radio-button *ngFor="let case of rest.case" value="{{case.numero}}"
                                             (change)="ch(i+1,rest.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1046,10 +1063,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{rest.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="sixCtrl3" required>
+                                    <mat-radio-group formControlName="sixCtrl{{i+22}}" required>
+                                      
                                         <mat-radio-button *ngFor="let case of rest.case" value="{{case.numero}}"
                                             (change)="ch(i+1,rest.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1084,10 +1102,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{rest.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="sixCtrl4" required>
+                                    <mat-radio-group formControlName="sixCtrl{{i+32}}" required>
+                                    
                                         <mat-radio-button *ngFor="let case of rest.case" value="{{case.numero}}"
                                             (change)="ch(i+1,rest.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1112,7 +1131,7 @@
                         <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
-            </mat-step>
+            </mat-step> 
 
 
             <mat-step [stepControl]="sevenFormGroup" errorMessage="required." [optional]="isOptional">
@@ -1140,10 +1159,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{br.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="sevenCtrl1" required>
+                                    <mat-radio-group formControlName="sevenCtrl{{i+1}}" required>
+                                        
                                         <mat-radio-button *ngFor="let case of br.case" value="{{case.numero}}"
                                             (change)="ch(i+1,br.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1177,10 +1197,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{br.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="sevenCtrl2" required>
+                                    <mat-radio-group formControlName="sevenCtrl{{i+6}}" required>
+                                       
                                         <mat-radio-button *ngFor="let case of br.case" value="{{case.numero}}"
                                             (change)="ch(i+1,br.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1213,12 +1234,11 @@
 
                                 <td class="col-sm-1"> {{i+250}}
                                 </td>
-                                <td class="col-sm-7"> {{br.name}}
-
-                                    } </td>
+                                <td class="col-sm-7"> {{br.name}} </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="sevenCtrl3" required>
+                                    <mat-radio-group formControlName="sevenCtrl{{i+13}}" required>
+                                       
                                         <mat-radio-button *ngFor="let case of br.case" value="{{case.numero}}"
                                             (change)="ch(i+1,br.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1253,10 +1273,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{br.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="sevenCtrl4" required>
+                                    <mat-radio-group formControlName="sevenCtrl{{i+20}}" required>
+                                    
                                         <mat-radio-button *ngFor="let case of br.case" value="{{case.numero}}"
                                             (change)="ch(i+1,br.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1278,7 +1299,7 @@
                         <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
-            </mat-step>
+            </mat-step> 
 
             <mat-step [stepControl]="heigtFormGroup" errorMessage="required." [optional]="isOptional">
                 <form [formGroup]="heigtFormGroup">
@@ -1305,10 +1326,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{sal.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="heigtCtrl1" required>
+                                    <mat-radio-group formControlName="heigtCtrl{{i+1}}" required>
+                                      
                                         <mat-radio-button *ngFor="let case of sal.case" value="{{case.numero}}"
                                             (change)="ch(i+1,sal.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1342,10 +1364,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{sal.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="heigtCtrl2" required>
+                                    <mat-radio-group formControlName="heigtCtrl{{i+12}}" required>
+                                      
                                         <mat-radio-button *ngFor="let case of sal.case" value="{{case.numero}}"
                                             (change)="ch(i+1,sal.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1362,12 +1385,12 @@
                         <button mat-button matStepperPrevious class="back">Back</button>
                         <button mat-button matStepperNext class="suivant">Suivant</button>
                         <p style="color:red;">{{message}}</p>
-                        <p style="color:red;">{{message}}</p>
+                       
                     </div>
                 </form>
             </mat-step>
 
-            <mat-step [stepControl]="nineFormGroup" errorMessage="required." [optional]="isOptional">
+             <mat-step [stepControl]="nineFormGroup" errorMessage="required." [optional]="isOptional">
                 <form [formGroup]="nineFormGroup">
                     <ng-template matStepLabel>Bien-être et fitness</ng-template>
 
@@ -1392,10 +1415,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="nineCtrl1" required>
+                                    <mat-radio-group formControlName="nineCtrl{{i+1}}" required>
+                                        
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1429,10 +1453,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="nineCtrl2" required>
+                                    <mat-radio-group formControlName="nineCtrl{{i+13}}" required>
+                                       
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1466,10 +1491,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="nineCtrl3" required>
+                                    <mat-radio-group formControlName="nineCtrl{{i+20}}" required>
+                                        
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1503,10 +1529,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="nineCtrl4" required>
+                                    <mat-radio-group formControlName="nineCtrl{{i+27}}" required>
+                                        
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1541,10 +1568,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="nineCtrl5" required>
+                                    <mat-radio-group formControlName="nineCtrl{{i+31}}" required>
+                                       
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1578,10 +1606,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
 
-                                    } </td>
+                                 </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="nineCtrl6" required>
+                                    <mat-radio-group formControlName="nineCtrl{{i+34}}" required>
+                                        
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1616,10 +1645,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="nineCtrl7" required>
+                                    <mat-radio-group formControlName="nineCtrl{{i+40}}" required>
+                                       
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1654,10 +1684,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="nineCtrl8" required>
+                                    <mat-radio-group formControlName="nineCtrl{{i+51}}" required>
+                                        
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1692,10 +1723,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
 
-                                    } </td>
+                                    </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="nineCtrl9" required>
+                                    <mat-radio-group formControlName="nineCtrl{{i+59}}" required>
+                                        
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1729,10 +1761,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="nineCtrl10" required>
+                                    <mat-radio-group formControlName="nineCtrl{{i+72}}" required>
+                                        
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1766,10 +1799,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bien.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="nineCtrl11" required>
+                                    <mat-radio-group formControlName="nineCtrl{{i+81}}" required>
+                                       
                                         <mat-radio-button *ngFor="let case of bien.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bien.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1790,9 +1824,9 @@
                         <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
-            </mat-step>
+            </mat-step> 
 
-            <mat-step [stepControl]="tenFormGroup" errorMessage="required." [optional]="isOptional">
+             <mat-step [stepControl]="tenFormGroup" errorMessage="required." [optional]="isOptional">
                 <form [formGroup]="tenFormGroup">
                     <ng-template matStepLabel>Piscine</ng-template>
 
@@ -1817,10 +1851,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{pis.name}}
 
-                                    } </td>
+                                    </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="tenCtrl1" required>
+                                    <mat-radio-group formControlName="tenCtrl{{i+1}}" required>
+                                        tenCtrl{{i+1}}
                                         <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}"
                                             (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1854,10 +1889,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{pis.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="tenCtrl2" required>
+                                    <mat-radio-group formControlName="tenCtrl{{i+9}}" required>
+                                        tenCtrl{{i+9}}
                                         <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}"
                                             (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1886,16 +1922,17 @@
                         </thead>
 
                         <tbody>
-                            <tr *ngFor=" let pis of  piscine[2].critere;let i = index">
+                            <tr *ngFor=" let pis of  piscine[3].critere;let i = index">
 
                                 <td class="col-sm-1"> {{i+388}}
                                 </td>
                                 <td class="col-sm-7"> {{pis.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="tenCtrl3" required>
+                                    <mat-radio-group formControlName="tenCtrl{{i+15}}" required>
+                                        tenCtrl{{i+15}}
                                         <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}"
                                             (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1925,16 +1962,17 @@
                         </thead>
 
                         <tbody>
-                            <tr *ngFor=" let pis of  piscine[3].critere;let i = index">
+                            <tr *ngFor=" let pis of  piscine[4].critere;let i = index">
 
                                 <td class="col-sm-1"> {{i+393}}
                                 </td>
                                 <td class="col-sm-7"> {{pis.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="tenCtrl4" required>
+                                    <mat-radio-group formControlName="tenCtrl{{i+19}}" required>
+                                        tenCtrl{{i+19}}
                                         <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}"
                                             (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -1963,16 +2001,17 @@
                         </thead>
 
                         <tbody>
-                            <tr *ngFor=" let pis of  piscine[4].critere;let i = index">
+                            <tr *ngFor=" let pis of  piscine[5].critere;let i = index">
 
                                 <td class="col-sm-1"> {{i+397}}
                                 </td>
                                 <td class="col-sm-7"> {{pis.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="tenCtrl5" required>
+                                    <mat-radio-group formControlName="tenCtrl{{i+22}}" required>
+                                        tenCtrl{{i+22}}
                                         <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}"
                                             (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2001,16 +2040,17 @@
                         </thead>
 
                         <tbody>
-                            <tr *ngFor=" let pis of  piscine[5].critere;let i = index">
+                            <tr *ngFor=" let pis of  piscine[6].critere;let i = index">
 
                                 <td class="col-sm-1"> {{i+400}}
                                 </td>
                                 <td class="col-sm-7"> {{pis.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="tenCtrl6" required>
+                                    <mat-radio-group formControlName="tenCtrl{{i+34}}" required>
+                                        tenCtrl{{i+34}}
                                         <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}"
                                             (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2039,16 +2079,17 @@
                         </thead>
 
                         <tbody>
-                            <tr *ngFor=" let pis of  piscine[6].critere;let i = index">
+                            <tr *ngFor=" let pis of  piscine[7].critere;let i = index">
 
                                 <td class="col-sm-1"> {{i+412}}
                                 </td>
                                 <td class="col-sm-7"> {{pis.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="tenCtrl7" required>
+                                    <mat-radio-group formControlName="tenCtrl{{i+41}}" required>
+                                        tenCtrl{{i+41}}
                                         <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}"
                                             (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2076,16 +2117,55 @@
                         </thead>
 
                         <tbody>
-                            <tr *ngFor=" let pis of  piscine[7].critere;let i = index">
+                            <tr *ngFor=" let pis of  piscine[8].critere;let i = index">
 
                                 <td class="col-sm-1"> {{i+419}}
                                 </td>
                                 <td class="col-sm-7"> {{pis.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="tenCtrl8" required>
+                                    <mat-radio-group formControlName="tenCtrl{{i+50}}" required>
+                                        tenCtrl{{i+50}}
+                                        <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}"
+                                            (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}
+                                        </mat-radio-button>
+                                    </mat-radio-group>
+                                </td>
+                            </tr>
+
+
+
+                        </tbody>
+                    </table>
+
+                    <div class="rubrique mt-4">
+                        <h2> Rubrique: Douche de la piscine </h2>
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="color:#dd2251 ;"> No</th>
+                                <th scope="col" style="color:#dd2251 ;"> Critères</th>
+                                <th scope="col" style="color: #dd2251;"> Notation</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor=" let pis of  piscine[2].critere;let i = index">
+
+                                <td class="col-sm-1"> {{i+388}}
+                                </td>
+                                <td class="col-sm-7"> {{pis.name}}
+
+                                     </td>
+
+                                <td class="col-sm-4">
+                                    <mat-radio-group formControlName="tenCtrl{{i+60}}" required>
+                                        tenCtrl{{i+60}}
                                         <mat-radio-button *ngFor="let case of pis.case" value="{{case.numero}}"
                                             (change)="ch(i+1,pis.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2106,7 +2186,7 @@
                         <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
-            </mat-step>
+            </mat-step> 
 
 
             <mat-step [stepControl]="elevenFormGroup" errorMessage="required." [optional]="isOptional">
@@ -2134,10 +2214,10 @@
                                 </td>
                                 <td class="col-sm-7"> {{bou.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="elevenCtrl1">
+                                    <mat-radio-group formControlName="elevenCtrl{{i+1}}">
                                         <mat-radio-button *ngFor="let case of bou.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bou.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2158,9 +2238,9 @@
                         <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
-            </mat-step>
+            </mat-step> 
 
-            <mat-step [stepControl]="twelveFormGroup" errorMessage="required." [optional]="isOptional">
+             <mat-step [stepControl]="twelveFormGroup" errorMessage="required." [optional]="isOptional">
                 <form [formGroup]="twelveFormGroup">
                     <ng-template matStepLabel>Unités de logement</ng-template>
 
@@ -2185,10 +2265,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="twelveCtrl1">
+                                    <mat-radio-group formControlName="twelveCtrl{{i+1}}">
+                                        twelveCtrl{{i+1}}
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}"
                                             (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2222,10 +2303,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="twelveCtrl2">
+                                    <mat-radio-group formControlName="twelveCtrl{{i+16}}">
+                                        twelveCtrl{{i+16}}
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}"
                                             (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2260,10 +2342,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="twelveCtrl3">
+                                    <mat-radio-group formControlName="twelveCtrl{{i+23}}">
+                                        twelveCtrl{{i+23}}
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}"
                                             (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2299,10 +2382,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
 
-                                    } </td>
+                                    </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="twelveCtrl4">
+                                    <mat-radio-group formControlName="twelveCtrl{{i+29}}">
+                                        twelveCtrl{{i+29}}
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}"
                                             (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2337,10 +2421,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="twelveCtrl5">
+                                    <mat-radio-group formControlName="twelveCtrl{{i+32}}">
+                                        twelveCtrl{{i+32}}
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}"
                                             (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2375,10 +2460,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="twelveCtrl6">
+                                    <mat-radio-group formControlName="twelveCtrl{{i+47}}">
+                                        twelveCtrl{{i+47}}
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}"
                                             (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2413,10 +2499,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="twelveCtrl7">
+                                    <mat-radio-group formControlName="twelveCtrl{{i+75}}">
+                                        twelveCtrl{{i+75}}
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}"
                                             (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2450,10 +2537,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
 
-                                    } </td>
+                                    </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="twelveCtrl8">
+                                    <mat-radio-group formControlName="twelveCtrl{{i+82}}">
+                                        twelveCtrl{{i+82}}
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}"
                                             (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2487,10 +2575,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
 
-                                    } </td>
+                                    </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="twelveCtrl9">
+                                    <mat-radio-group formControlName="twelveCtrl{{i+92}}">
+                                        twelveCtrl{{i+92}}
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}"
                                             (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2525,10 +2614,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="twelveCtrl10">
+                                    <mat-radio-group formControlName="twelveCtrl{{i+96}}">
+                                        twelveCtrl{{i+96}}
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}"
                                             (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2563,10 +2653,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="twelveCtrl11">
+                                    <mat-radio-group formControlName="twelveCtrl{{i+99}}">
+                                        twelveCtrl{{i+99}}
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}"
                                             (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2601,10 +2692,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
 
-                                    } </td>
+                                    </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="twelveCtrl12">
+                                    <mat-radio-group formControlName="twelveCtrl{{i+102}}">
+                                        twelveCtrl{{i+102}}
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}"
                                             (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2639,10 +2731,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="twelveCtrl13">
+                                    <mat-radio-group formControlName="twelveCtrl{{i+113}}">
+                                        twelveCtrl{{i+113}}
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}"
                                             (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2676,10 +2769,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="twelveCtrl14">
+                                    <mat-radio-group formControlName="twelveCtrl{{i+121}}">
+                                        twelveCtrl{{i+121}}
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}"
                                             (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2715,10 +2809,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="twelveCtrl15">
+                                    <mat-radio-group formControlName="twelveCtrl{{i+130}}">
+                                        twelveCtrl{{i+130}}
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}"
                                             (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2752,10 +2847,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
 
-                                    } </td>
+                                 </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="twelveCtrl16">
+                                    <mat-radio-group formControlName="twelveCtrl{{i+140}}">
+                                        twelveCtrl{{i+140}}
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}"
                                             (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2790,10 +2886,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{unite.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="twelveCtrl17">
+                                    <mat-radio-group formControlName="twelveCtrl{{i+144}}">
+                                        twelveCtrl{{i+144}}
                                         <mat-radio-button *ngFor="let case of unite.case" value="{{case.numero}}"
                                             (change)="ch(i+1,unite.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2816,10 +2913,10 @@
                         <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
-            </mat-step>
+            </mat-step> 
 
 
-            <mat-step [stepControl]="thirteenFormGroup" errorMessage="required." [optional]="isOptional">
+             <mat-step [stepControl]="thirteenFormGroup" errorMessage="required." [optional]="isOptional">
                 <form [formGroup]="thirteenFormGroup">
                     <ng-template matStepLabel>Salle de bain privative</ng-template>
 
@@ -2844,10 +2941,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bain.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="thirteenCtrl1">
+                                    <mat-radio-group formControlName="thirteenCtrl{{i+1}}">
+                                        
                                         <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2881,10 +2979,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bain.name}}
 
-                                    } </td>
+                                    </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="thirteenCtrl2">
+                                    <mat-radio-group formControlName="thirteenCtrl{{i+8}}">
+                                        
                                         <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2919,10 +3018,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bain.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="thirteenCtrl3">
+                                    <mat-radio-group formControlName="thirteenCtrl{{i+23}}">
+                                        
                                         <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2958,10 +3058,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bain.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="thirteenCtrl4">
+                                    <mat-radio-group formControlName="thirteenCtrl{{i+40}}">
+                                        
                                         <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -2996,10 +3097,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bain.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="thirteenCtrl5">
+                                    <mat-radio-group formControlName="thirteenCtrl{{i+50}}">
+                                        
                                         <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -3034,10 +3136,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bain.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="thirteenCtrl6">
+                                    <mat-radio-group formControlName="thirteenCtrl{{i+57}}">
+                                        
                                         <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -3072,47 +3175,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bain.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="thirteenCtrl7">
-                                        <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}"
-                                            (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}
-                                        </mat-radio-button>
-                                    </mat-radio-group>
-                                </td>
-                            </tr>
-
-
-
-                        </tbody>
-                    </table>
-
-                    <div class="rubrique mt-4">
-                        <h2> Rubrique: Cabines de toilette </h2>
-                    </div>
-
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col" style="color:#dd2251 ;"> No</th>
-                                <th scope="col" style="color:#dd2251 ;"> Critères</th>
-                                <th scope="col" style="color: #dd2251;"> Notation</th>
-                            </tr>
-
-                        </thead>
-
-                        <tbody>
-                            <tr *ngFor=" let bain of  salle_bain_prive[7].critere;let i = index">
-
-                                <td class="col-sm-1"> {{i+669}}
-                                </td>
-                                <td class="col-sm-7"> {{bain.name}}
-
-                                    } </td>
-
-                                <td class="col-sm-4">
-                                    <mat-radio-group formControlName="thirteenCtrl8">
+                                    <mat-radio-group formControlName="thirteenCtrl{{i+67}}">
+                                       
                                         <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -3147,10 +3214,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{bain.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="thirteenCtrl9">
+                                    <mat-radio-group formControlName="thirteenCtrl{{i+82}}">
+                                        
                                         <mat-radio-button *ngFor="let case of bain.case" value="{{case.numero}}"
                                             (change)="ch(i+1,bain.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -3168,13 +3236,13 @@
                         <button mat-button matStepperPrevious class="back">Back</button>
                         <button mat-button matStepperNext class="suivant">Suivant</button>
                         <p style="color:red;">{{message}}</p>
-                        <p style="color:red;">{{message}}</p>
+                        
                     </div>
                 </form>
-            </mat-step>
+            </mat-step> 
 
 
-            <mat-step [stepControl]="forteenFormGroup" errorMessage="required." [optional]="isOptional">
+             <mat-step [stepControl]="forteenFormGroup" errorMessage="required." [optional]="isOptional">
                 <form [formGroup]="forteenFormGroup">
                     <ng-template matStepLabel>Espace "Personnel"</ng-template>
 
@@ -3199,10 +3267,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{espace.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="forteenCtrl1">
+                                    <mat-radio-group formControlName="forteenCtrl{{i+1}}">
+                                        
                                         <mat-radio-button *ngFor="let case of espace.case" value="{{case.numero}}"
                                             (change)="ch(i+1,espace.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -3236,10 +3305,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{espace.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="forteenCtrl2">
+                                    <mat-radio-group formControlName="forteenCtrl{{i+9}}">
+                                        
                                         <mat-radio-button *ngFor="let case of espace.case" value="{{case.numero}}"
                                             (change)="ch(i+1,espace.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -3274,10 +3344,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{espace.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="forteenCtrl3">
+                                    <mat-radio-group formControlName="forteenCtrl{{i+15}}">
+                                        
                                         <mat-radio-button *ngFor="let case of espace.case" value="{{case.numero}}"
                                             (change)="ch(i+1,espace.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -3313,10 +3384,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{espace.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="forteenCtrl4">
+                                    <mat-radio-group formControlName="forteenCtrl{{i+22}}">
+                                       
                                         <mat-radio-button *ngFor="let case of espace.case" value="{{case.numero}}"
                                             (change)="ch(i+1,espace.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -3350,10 +3422,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{espace.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="forteenCtrl5">
+                                    <mat-radio-group formControlName="forteenCtrl{{i+29}}">
+                                        
                                         <mat-radio-button *ngFor="let case of espace.case" value="{{case.numero}}"
                                             (change)="ch(i+1,espace.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -3373,7 +3446,7 @@
                         <p style="color:red;">{{message}}</p>
                     </div>
                 </form>
-            </mat-step>
+            </mat-step> 
 
 
 
@@ -3402,10 +3475,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{elect.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="fiveteenCtrl1">
+                                    <mat-radio-group formControlName="fiveteenCtrl{{i+1}}">
+                                       
                                         <mat-radio-button *ngFor="let case of elect.case" value="{{case.numero}}"
                                             (change)="ch(i+1,elect.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -3439,10 +3513,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{elect.name}}
 
-                                    } </td>
+                                    </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="fiveteenCtrl2">
+                                    <mat-radio-group formControlName="fiveteenCtrl{{i+4}}">
+                                       
                                         <mat-radio-button *ngFor="let case of elect.case" value="{{case.numero}}"
                                             (change)="ch(i+1,elect.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>
@@ -3477,10 +3552,11 @@
                                 </td>
                                 <td class="col-sm-7"> {{elect.name}}
 
-                                    } </td>
+                                     </td>
 
                                 <td class="col-sm-4">
-                                    <mat-radio-group formControlName="fiveteenCtrl3">
+                                    <mat-radio-group formControlName="fiveteenCtrl{{i+10}}">
+                                      
                                         <mat-radio-button *ngFor="let case of elect.case" value="{{case.numero}}"
                                             (change)="ch(i+1,elect.name,$event)" required>{{case.numero}}
                                         </mat-radio-button>

@@ -21,6 +21,8 @@ import {MatTableModule} from '@angular/material/table';
 import { ReportingOneComponent } from './components/reporting-one/reporting-one.component';
 import { SearchPipe } from './components/reporting-one/search_pipe';
 import { ExportService } from './export.service';
+import { HotelEvalComponent } from './components/hotel-eval/hotel-eval.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -33,6 +35,7 @@ import { ExportService } from './export.service';
   declarations: [
     AppComponent,
     HotelComponent,
+    HotelEvalComponent,
     ReportingOneComponent,
     SearchPipe,
     
@@ -56,6 +59,7 @@ import { ExportService } from './export.service';
     MatGridListModule,
     MatDialogModule,
     MatTableModule,
+    HttpClientModule,
     
     
   ],

@@ -19,6 +19,7 @@ import { UNITE_LOGEMENT } from '../../common/hotel/unite_logement';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { LegendDialogComponent } from '../legend-dialog/legend-dialog.component';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
+import { HttpClient } from '@angular/common/http';
 //import { HOTEL } from 'src/app/common/hotel/hotel';
 //import {legendDialogComponent} from '../legend-dialog';
 
@@ -82,24 +83,11 @@ export class HotelComponent implements OnInit {
   forteenFormGroup!: FormGroup;
   fiveteenFormGroup!: FormGroup;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   firstCtrl1!: string;
 
-  constructor(private _formBuilder: FormBuilder, public dialog: MatDialog) { }
+  constructor(private _formBuilder: FormBuilder, public dialog: MatDialog,private http: HttpClient) { }
 
-
+ 
 
   ngOnInit(): void {
 
@@ -122,15 +110,9 @@ export class HotelComponent implements OnInit {
     this.validateP();
 
 
-
-
-
-
-
-
   }
 
-  
+
 
   accueil: Object = [];
 
@@ -145,7 +127,7 @@ export class HotelComponent implements OnInit {
 
         );
       }
-    }  
+    }
   }
 
 
@@ -160,7 +142,7 @@ export class HotelComponent implements OnInit {
         this.firstFormGroup = this._formBuilder.group(
           Object.assign(this.accueilI, { ["firstCtrl" + (index)]: ['', Validators.required] })
 
-        );      
+        );
       }
     }
   }
@@ -176,9 +158,9 @@ export class HotelComponent implements OnInit {
         this.secondFormGroup = this._formBuilder.group(
           Object.assign(this.accueilE, { ["secondCtrl" + (index)]: ['', Validators.required] })
 
-        );  
-      
-            
+        );
+
+
       }
     }
   }
@@ -194,9 +176,9 @@ export class HotelComponent implements OnInit {
         this.thirdFormGroup = this._formBuilder.group(
           Object.assign(this.accueilS, { ["thirdCtrl" + (index)]: ['', Validators.required] })
 
-        );     
-       
-         
+        );
+
+
       }
     }
   }
@@ -213,8 +195,8 @@ export class HotelComponent implements OnInit {
         this.forFormGroup = this._formBuilder.group(
           Object.assign(this.accueilC, { ["forCtrl" + (index)]: ['', Validators.required] })
 
-        );    
-        
+        );
+
       }
     }
   }
@@ -232,8 +214,8 @@ export class HotelComponent implements OnInit {
         this.fiveFormGroup = this._formBuilder.group(
           Object.assign(this.accueilP, { ["fiveCtrl" + (index)]: ['', Validators.required] })
 
-        );  
-            
+        );
+
       }
     }
   }
@@ -250,8 +232,8 @@ export class HotelComponent implements OnInit {
         this.sixFormGroup = this._formBuilder.group(
           Object.assign(this.accueilR, { ["sixCtrl" + (index)]: ['', Validators.required] })
 
-        );   
-       
+        );
+
       }
     }
   }
@@ -267,9 +249,9 @@ export class HotelComponent implements OnInit {
         this.sevenFormGroup = this._formBuilder.group(
           Object.assign(this.accueilB, { ["sevenCtrl" + (index)]: ['', Validators.required] })
 
-        );     
-       
-         
+        );
+
+
       }
     }
   }
@@ -286,9 +268,9 @@ export class HotelComponent implements OnInit {
         this.heigtFormGroup = this._formBuilder.group(
           Object.assign(this.accueilT, { ["heigtCtrl" + (index)]: ['', Validators.required] })
 
-        );   
-      
-           
+        );
+
+
       }
     }
   }
@@ -305,8 +287,8 @@ export class HotelComponent implements OnInit {
         this.nineFormGroup = this._formBuilder.group(
           Object.assign(this.accueilF, { ["nineCtrl" + (index)]: ['', Validators.required] })
 
-        );   
-           
+        );
+
       }
     }
   }
@@ -323,8 +305,8 @@ export class HotelComponent implements OnInit {
         this.tenFormGroup = this._formBuilder.group(
           Object.assign(this.accueilO, { ["tenCtrl" + (index)]: ['', Validators.required] })
 
-        ); 
-            
+        );
+
       }
     }
   }
@@ -341,7 +323,7 @@ export class HotelComponent implements OnInit {
         this.elevenFormGroup = this._formBuilder.group(
           Object.assign(this.accueilA, { ["elevenCtrl" + (index)]: ['', Validators.required] })
 
-        );      
+        );
       }
     }
   }
@@ -357,8 +339,8 @@ export class HotelComponent implements OnInit {
         this.twelveFormGroup = this._formBuilder.group(
           Object.assign(this.accueilU, { ["twelveCtrl" + (index)]: ['', Validators.required] })
 
-        ); 
-           
+        );
+
       }
     }
   }
@@ -375,8 +357,8 @@ export class HotelComponent implements OnInit {
         this.thirteenFormGroup = this._formBuilder.group(
           Object.assign(this.accueilV, { ["thirteenCtrl" + (index)]: ['', Validators.required] })
 
-        ); 
-             
+        );
+
       }
     }
   }
@@ -393,8 +375,8 @@ export class HotelComponent implements OnInit {
         this.forteenFormGroup = this._formBuilder.group(
           Object.assign(this.accueilJ, { ["forteenCtrl" + (index)]: ['', Validators.required] })
 
-        );  
-          
+        );
+
       }
     }
   }
@@ -412,7 +394,7 @@ export class HotelComponent implements OnInit {
           Object.assign(this.accueilZ, { ["fiveteenCtrl" + (index)]: ['', Validators.required] })
 
         );    console.log("fiveteenCtrl" + (index));
-          
+
       }
     }
   }

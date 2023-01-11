@@ -8,39 +8,32 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HotelComponent } from './components/hotel/hotel.component';
 
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatTableModule} from '@angular/material/table';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
 import { ReportingOneComponent } from './components/reporting-one/reporting-one.component';
 import { SearchPipe } from './components/reporting-one/search_pipe';
 import { ExportService } from './export.service';
 import { HotelEvalComponent } from './components/hotel-eval/hotel-eval.component';
 import { HttpClientModule } from '@angular/common/http';
-
-
-
-
-
-
-
+import { ResultatEvalComponent } from './components/hotel-eval/resultat-eval.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
     AppComponent,
     HotelComponent,
     HotelEvalComponent,
+    ResultatEvalComponent,
     ReportingOneComponent,
     SearchPipe,
-    
-    
-  
   ],
   imports: [
     BrowserModule,
@@ -59,11 +52,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatGridListModule,
     MatDialogModule,
     MatTableModule,
+    MatTabsModule,
+
     HttpClientModule,
-    
-    
   ],
   providers: [ExportService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,78 @@
+<div class="container">
+  <div style="margin-top: 50px">
+    <h1>Resultat d'évaluation</h1>
+    <mat-tab-group>
+      <mat-tab label="Resulat">
+        <br />
+
+        <h1>Le resultat de votre Auto-Evaluation est :</h1>
+
+        <table class="table table-responsive table-striped">
+          <thead>
+            <th></th>
+            <th>% pondéré majeur {{ etoile }}*</th>
+            <th>% pondéré mineur {{ etoile }}*</th>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>{{ dataResultSource[101].chapitre }}</td>
+
+              <td>{{ dataResultSource[101].majeur }}</td>
+              <td>{{ dataResultSource[101].mineur }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+
+        <p style="font-size: 18px; color: red" class="blink_me">
+          Desole vous n’êtes pas eligible pour {{ etoile }}* il faut au moins
+          <b>90%</b> pour la pondération majeur et <b>60%</b> pour la
+          pondération mineur.
+        </p>
+      </mat-tab>
+      <mat-tab label="Reporting Global">
+        <br /><br />
+
+        <table class="table table-responsive">
+          <thead>
+            <th>Chapitres et rubriques</th>
+            <th>% Pondéré majeur {{ etoile }}*</th>
+            <th>% Pondéré mineur {{ etoile }}*</th>
+          </thead>
+
+          <tbody>
+            <tr
+              *ngFor="let ligne of dataResultSource"
+              [ngClass]="{
+                mytable:
+                  ligne.chapitre == 'Information et réservation' ||
+                  ligne.chapitre == 'Extérieur' ||
+                  ligne.chapitre == 'Accueil et réception' ||
+                  ligne.chapitre == 'Sanitaires communs' ||
+                  ligne.chapitre == 'Circulation' ||
+                  ligne.chapitre == 'Petit déjeuner' ||
+                  ligne.chapitre == 'Restaurant(s)' ||
+                  ligne.chapitre == 'Bar' ||
+                  ligne.chapitre ==
+                    'Salle(s) de séminaires, de réunions et de cérémonies' ||
+                  ligne.chapitre == 'Bien-être et fitness' ||
+                  ligne.chapitre == 'Piscine' ||
+                  ligne.chapitre == 'Boutique' ||
+                  ligne.chapitre == 'Unités de logement' ||
+                  ligne.chapitre == 'Salle de bain privative' ||
+                  ligne.chapitre == 'Espace Personnel' ||
+                  ligne.chapitre == 'Electricité, eau et assainissement' ||
+                  ligne.chapitre == 'Total général'
+              }"
+            >
+              <td>{{ ligne.chapitre }}</td>
+              <td>{{ ligne.majeur }}</td>
+              <td>{{ ligne.mineur }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
